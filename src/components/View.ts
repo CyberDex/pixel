@@ -1,4 +1,4 @@
-import { Container, Sprite, Text, TextStyle, Graphics } from 'pixi.js';
+import { Container, Sprite, Text, TextStyle, Graphics } from 'pixi.js'
 
 export class View extends Container {
     private readonly bg: Sprite

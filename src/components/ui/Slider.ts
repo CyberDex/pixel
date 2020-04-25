@@ -7,7 +7,7 @@ export class Slider extends View {
     private slider: Graphics
     private sliderData: any
     private sliderDragging: boolean = false
-    private cb: { (data: number): void; }[] = []
+    private cb: { (data: number): void }[] = []
 
     constructor(
         private w: number = 200,
@@ -20,7 +20,7 @@ export class Slider extends View {
         super()
         this.width = w
         this.height = h
-
+        this.value = min
         const radius = h / 2
         this.background = this.addRect(-h / 2, 0, w + h, h, bgColor, radius)
         this.addChild(this.background)

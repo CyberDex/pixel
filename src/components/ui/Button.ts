@@ -1,10 +1,10 @@
 import { View } from '../View'
-import { Graphics, TextStyle, Text } from 'pixi.js';
+import { Graphics, TextStyle, Text } from 'pixi.js'
 
 export class Button extends View {
     private background: Graphics
     private text: Text
-    private cb: { (): void; }[] = []
+    private cb: { (): void }[] = []
     private pressed: boolean = false
 
     constructor(
@@ -47,5 +47,14 @@ export class Button extends View {
     private onMouseOut() {
         this.scale.set(1)
         this.pressed = false
+    }
+
+    public onClick(cb: { (): void }): number {
+        this.cb.push(cb)
+        return this.cb.length
+    }
+
+    public offClick(cbID: number) {
+        delete this.cb[cbID]
     }
 }
