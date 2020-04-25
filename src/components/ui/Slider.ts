@@ -21,12 +21,11 @@ export class Slider extends View {
         this.width = w
         this.height = h
 
-        this.background = this.addRect(0, 0, w, h, bgColor)
+        const radius = h / 2
+        this.background = this.addRect(-h / 2, 0, w + h, h, bgColor, radius)
         this.addChild(this.background)
-        this.addChild(this.addCircle(0, h / 2, h / 2, bgColor))
-        this.addChild(this.addCircle(w, h / 2, h * .5, bgColor))
 
-        this.slider = this.addCircle(0, h / 2, h / 2, fgColor)
+        this.slider = this.addCircle(0, radius, radius + 5, fgColor)
         this.addChild(this.slider)
         this.slider.interactive = true
         this.slider.buttonMode = true

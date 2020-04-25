@@ -33,11 +33,12 @@ export class View extends Container {
         y: number = 0,
         width: number = 200,
         height: number = 40,
-        color: number = 0xDE3249
+        color: number = 0xDE3249,
+        round: number = 0
     ) {
         const rect = new Graphics()
         rect.beginFill(color)
-        rect.drawRect(x, y, width, height)
+        rect.drawRoundedRect(x, y, width, height, round)
         rect.endFill()
         return rect
     }
