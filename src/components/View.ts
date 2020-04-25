@@ -20,4 +20,6 @@ export class View extends Container {
             }
         }
     }
+
+    public resize() { }
 }
