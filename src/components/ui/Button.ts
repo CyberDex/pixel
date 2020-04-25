@@ -11,7 +11,7 @@ export class Button extends View {
         private w: number = 200,
         private h: number = 30,
         private textString: string,
-        private textStyle: TextStyle,
+        private textStyle: any,
         private bgColor: number = 0xffffff,
         private radius: number = 0
     ) {
@@ -24,7 +24,7 @@ export class Button extends View {
         this.background.x = - w / 2
         this.background.y = - h / 2
 
-        this.text = this.addText(textString, textStyle)
+        this.text = this.addText(textString, textStyle as TextStyle)
 
         this.interactive = true
         this.buttonMode = true

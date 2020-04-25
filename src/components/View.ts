@@ -21,7 +21,7 @@ export class View extends Container {
         }
     }
 
-    public addText(text: string, style: TextStyle) {
+    public addText(text: string, style) {
         const textEl = new Text(text, style)
         textEl.anchor.set(.5)
         this.addChild(textEl)
