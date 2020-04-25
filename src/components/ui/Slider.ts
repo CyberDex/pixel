@@ -2,16 +2,20 @@ import { View } from '../View'
 import { Graphics } from 'pixi.js'
 
 export class Slider extends View {
+    public value = 0
     private background: Graphics
     private slider: Graphics
     private sliderData: any
     private sliderDragging: boolean = false
+    private cb: { (data: number): void; }[] = []
 
     constructor(
-        public w: number = 200,
-        public h: number = 40,
-        public bgColor: number = 0xDE3249,
-        public fgColor: number = 0xffffff,
+        private w: number = 200,
+        private h: number = 30,
+        private min: number = 0,
+        private max: number = 100,
+        private bgColor: number = 0xffffff,
+        private fgColor: number = 0xDE3249
     ) {
         super()
         this.width = w
@@ -53,6 +57,17 @@ export class Slider extends View {
                     : newPosition.x < 0
                         ? 0
                         : newPosition.x
+            this.value = Math.round(this.min + (this.max - this.min) / 100 * Math.round(this.slider.x * 100 / this.w))
+            this.cb.forEach(cb => cb(this.value))
         }
+    }
+
+    public onChange(cb: { (data: number): void }): number {
+        this.cb.push(cb)
+        return this.cb.length
+    }
+
+    public offChange(cbID: number) {
+        delete this.cb[cbID]
     }
 }
