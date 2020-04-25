@@ -1,8 +1,8 @@
 import { Application } from 'pixi.js'
 
 export class App extends Application {
-    constructor() {
-        super()
+    constructor(params) {
+        super(params)
         window.addEventListener('resize', () => {
             this.resizeHandler()
             this.resizeRenderer()
