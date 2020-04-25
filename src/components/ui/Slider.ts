@@ -37,6 +37,7 @@ export class Slider extends View {
     }
 
     public onDragStart(event) {
+        this.slider.scale.set(0.95)
         this.sliderData = event.data
         this.sliderDragging = true
     }
@@ -44,7 +45,7 @@ export class Slider extends View {
     public onDragEnd() {
         this.sliderDragging = false
         this.sliderData = null
-
+        this.slider.scale.set(1)
     }
 
     public onDragMove() {
