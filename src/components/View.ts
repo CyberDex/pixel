@@ -1,4 +1,4 @@
-import { Container, Sprite } from 'pixi.js';
+import { Container, Sprite, Text, TextStyle } from 'pixi.js';
 
 export class View extends Container {
     private readonly bg: Sprite
@@ -21,5 +21,12 @@ export class View extends Container {
         }
     }
 
-    public resize() { }
+    public addText(text: string, style: TextStyle) {
+        const textEl = new Text(text, style)
+        textEl.anchor.set(.5)
+        this.addChild(textEl)
+        return textEl
+    }
+
+    public resize(w, h: number) { }
 }
