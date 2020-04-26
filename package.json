@@ -4,6 +4,10 @@
 	"description": "Wrapper engine for pixi js",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"test": "mocha --reporter spec"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/CyberDex/pixil"
@@ -13,10 +17,15 @@
 		"pixi.js",
 		"typescript"
 	],
-	"author": "CyberDex",
+	"author": "Dmytro Soldatov <CyberDexx@gmail.com>",
 	"license": "ISC",
 	"dependencies": {
 		"@types/pixi.js": "^4.6.0",
 		"pixi.js": "^4.8.9"
+	},
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3"
 	}
 }
