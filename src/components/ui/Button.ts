@@ -62,7 +62,8 @@ export class Button extends View {
     }
 
     public set active(active: boolean) {
-        this.alpha = active ? 1 : .8
+        this.alpha = active ? 1 : .5
+        this.buttonMode = active
         this._active = active
     }
 
