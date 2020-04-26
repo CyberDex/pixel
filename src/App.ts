@@ -1,19 +1,13 @@
 import { Application } from 'pixi.js'
+import { LayoutManager } from './controllers/LayoutManager';
 
 export class App extends Application {
+    public layout: LayoutManager = LayoutManager.instance
     constructor(params) {
         super(params)
-        window.addEventListener('resize', () => {
-            this.resizeHandler()
-            this.resizeRenderer()
-        })
+        this.renderer.resize(this.layout.width, this.layout.height)
         document.body.appendChild(this.view)
-        this.resizeRenderer()
-    }
 
-    public resizeHandler() { }
-
-    private resizeRenderer() {
-        this.renderer.resize(window.innerWidth, window.innerHeight)
+        this.layout.onResize(() => this.renderer.resize(this.layout.width, this.layout.height))
     }
 }
