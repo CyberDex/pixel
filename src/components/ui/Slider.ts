@@ -10,6 +10,8 @@ export class Slider extends View {
     private cb: { (data: number): void }[] = []
 
     constructor(
+        public positionX: number = 50,
+        public positionY: number = 50,
         private w: number = 200,
         private h: number = 30,
         private min: number = 0,
@@ -17,7 +19,7 @@ export class Slider extends View {
         private bgColor: number = 0xffffff,
         private fgColor: number = 0xDE3249
     ) {
-        super()
+        super(positionX, positionY)
         this.width = w
         this.height = h
         this.value = min
@@ -69,5 +71,10 @@ export class Slider extends View {
 
     public offChange(cbID: number) {
         delete this.cb[cbID]
+    }
+
+    public onResize(w: number, h: number) {
+        this.x = w / 2 - this.w / 2
+        this.y = h / 2 - this.h / 2
     }
 }

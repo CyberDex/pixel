@@ -1,39 +1,35 @@
 import { View } from '../components/View'
+import { App } from '../App';
 
-export class SceneManager extends View {
+export class SceneManager {
     private scenes: {
         [key: string]: View
     } = {}
 
-    constructor() {
-        super()
-    }
+    constructor(public app: App) { }
 
-    public addScene(sceneName: string, sceneInst: View) {
+    public add(sceneName: string, sceneInst: View) {
         this.scenes[sceneName] = sceneInst
-        this.addChild(sceneInst)
-        this.hideScene(sceneName)
-    }
-
-    public showOnlyScene(scene: string) {
-        for (const scene in this.scenes) {
-            this.hideScene(scene)
-        }
-        this.scenes[scene].visible = true
-    }
-
-    public showScene(scene: string) {
-        this.scenes[scene].visible = true
-    }
-
-    public hideScene(scene: string) {
-        this.scenes[scene].visible = false
-    }
-
-    public resize(w, h: number) {
-        for (const scene in this.scenes) {
-            this.scenes[scene].resize(w, h)
+        this.app.stage.addChild(sceneInst)
+        if (Object.keys(this.scenes).length > 1) {
+            this.hide(sceneName)
         }
     }
 
+    public show(scene: string | string[], state: boolean = true) {
+        Array.isArray(scene)
+            ? scene.forEach(scene => this.scenes[scene].visible = state)
+            : this.scenes[scene].visible = state
+    }
+
+    public hide(scene: string | string[]) {
+        this.show(scene, false)
+    }
+
+    public showOnly(scene: string | string[]) {
+        for (const scene in this.scenes) {
+            this.hide(scene)
+        }
+        this.show(scene)
+    }
 }

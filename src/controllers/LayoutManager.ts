@@ -14,12 +14,14 @@ export class LayoutManager {
     private constructor() {
         this.width = window.innerWidth
         this.height = window.innerHeight
+        window.addEventListener('resize', () => this.resize())
+        document.addEventListener('DOMContentLoaded', () => this.resize())
+    }
 
-        window.addEventListener('resize', () => {
-            this.width = window.innerWidth
-            this.height = window.innerHeight
-            this.cb.forEach(cb => cb(this.width, this.height))
-        })
+    private resize() {
+        this.width = window.innerWidth
+        this.height = window.innerHeight
+        this.cb.forEach(cb => cb(this.width, this.height))
     }
 
     public onResize(cb: { (w?: number, h?: number): void }): number {

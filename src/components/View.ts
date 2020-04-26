@@ -1,13 +1,16 @@
-import { Container, Sprite, Text, TextStyle, Graphics } from 'pixi.js'
+import { Container, Sprite, Text, Graphics, autoDetectRenderer, RenderTexture } from 'pixi.js'
+import { LayoutManager } from '../controllers/LayoutManager';
 
 export class View extends Container {
     private readonly bg: Sprite
 
     constructor(
-        private bgImage?: string,
-        private content?: {
+        public positionX: number = 50,
+        public positionY: number = 50,
+        public bgImage?: string,
+        public content?: {
             [key: string]: View
-        }
+        },
     ) {
         super()
         if (bgImage) {
@@ -19,9 +22,10 @@ export class View extends Container {
                 this.addChild(content[child])
             }
         }
+        LayoutManager.instance.onResize((w, h) => this.onResize(w, h))
     }
 
-    public addText(text: string, style) {
+    public addText(text: string, style, x, y) {
         const textEl = new Text(text, style)
         textEl.anchor.set(.5)
         this.addChild(textEl)
@@ -57,8 +61,12 @@ export class View extends Container {
         return circle
     }
 
-    public resize(w, h: number) {
-        this.x = w * .5
-        this.y = h * .5
+    public onResize(w: number, h: number) {
+        this.children.forEach((element: any) => {
+            element.positionX &&
+                (element.x = w / 100 * element.positionX)
+            element.positionY &&
+                (element.y = h / 100 * element.positionY)
+        })
     }
 }

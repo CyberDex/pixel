@@ -1,5 +1,6 @@
 import { View } from '../View'
-import { Graphics, TextStyle, Text } from 'pixi.js'
+import { Graphics } from 'pixi.js'
+import { Label } from '../..'
 
 export class Button extends View {
     private background: Graphics
@@ -9,23 +10,25 @@ export class Button extends View {
     private _active: boolean = true
 
     constructor(
+        public positionX: number = 50,
+        public positionY: number = 50,
         private w: number = 200,
         private h: number = 30,
-        private textString: string,
-        private textStyle: any,
-        private bgColor: number = 0xffffff,
-        private radius: number = 0
+        private textString: string = '',
+        private textStyle: any = {},
+        private radius: number = 0,
+        private bgColor: number | string = 0xDE3249,
     ) {
         super()
         this.width = w
         this.height = h
 
-        this.background = this.addRect(0, 0, w, h, bgColor, radius)
+        this.background = this.addRect(0, 0, w, h, Number(bgColor), radius)
         this.addChild(this.background)
         this.background.x = - w / 2
         this.background.y = - h / 2
 
-        this.text = this.addText(textString, textStyle as TextStyle)
+        this.addChild(new Label(textString, textStyle, 0, 0))
 
         this.interactive = true
         this.buttonMode = true
