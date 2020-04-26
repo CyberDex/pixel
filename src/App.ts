@@ -6,8 +6,6 @@ export class App extends Application {
     constructor(params) {
         super(params)
         this.renderer.resize(this.layout.width, this.layout.height)
-        document.body.appendChild(this.view)
-
         this.layout.onResize(() => this.renderer.resize(this.layout.width, this.layout.height))
     }
 }
