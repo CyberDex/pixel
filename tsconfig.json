@@ -2,6 +2,12 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "ES6",
+        "lib": [
+            "es2017",
+            "es7",
+            "es6",
+            "dom"
+        ],
         "sourceMap": true,
         "noImplicitAny": false,
         "strict": false,
@@ -9,7 +15,8 @@
         "declaration": true,
         "outDir": "./dist"
     },
-    "include": [
-        "src/**/*"
+    "exclude": [
+        "node_modules",
+        "dist"
     ]
 }
