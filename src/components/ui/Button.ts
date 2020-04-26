@@ -6,6 +6,7 @@ export class Button extends View {
     private text: Text
     private cb: { (): void }[] = []
     private pressed: boolean = false
+    private _active: boolean = true
 
     constructor(
         private w: number = 200,
@@ -34,6 +35,7 @@ export class Button extends View {
     }
 
     private onDown() {
+        if (!this._active) return
         this.pressed = true
         this.scale.set(0.95)
     }
@@ -41,6 +43,7 @@ export class Button extends View {
     private onUp() {
         this.scale.set(1)
         this.pressed = false
+        if (!this._active) return
         this.cb.forEach(cb => cb())
     }
 
@@ -56,5 +59,14 @@ export class Button extends View {
 
     public offClick(cbID: number) {
         delete this.cb[cbID]
+    }
+
+    public set active(active: boolean) {
+        this.alpha = active ? 1 : .8
+        this._active = active
+    }
+
+    public get active() {
+        return this._active
     }
 }
