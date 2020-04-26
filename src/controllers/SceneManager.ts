@@ -10,19 +10,19 @@ export class SceneManager extends View {
     }
 
     public addScene(sceneName: string, sceneInst: View) {
-        sceneInst.visible = false
         this.scenes[sceneName] = sceneInst
         this.addChild(sceneInst)
-    }
-
-    public showScene(scene: string) {
-        this.scenes[scene].visible = true
+        this.hideScene(sceneName)
     }
 
     public showOnlyScene(scene: string) {
         for (const scene in this.scenes) {
-            this.scenes[scene].visible = false
+            this.hideScene(scene)
         }
+        this.scenes[scene].visible = true
+    }
+
+    public showScene(scene: string) {
         this.scenes[scene].visible = true
     }
 
