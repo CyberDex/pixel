@@ -2,11 +2,10 @@ import { DisplayObject } from 'pixi.js'
 
 export class Animation {
     private _isPlaying: boolean = false
-    private directions: IAnimate = {}
 
     constructor(
         private element: DisplayObject,
-        private animate: IAnimation) {
+        private props: IAnimation) {
     }
 
     public play() {
@@ -21,15 +20,11 @@ export class Animation {
     private update() {
         if (!this.isPlaying) { return }
 
-        for (const prop in this.animate.animate) {
-            const from = this.element[prop]
-            const to = this.animate[prop]
-            const direction = this.directions[prop]
-                ? this.directions[prop]
-                : (this.directions[prop] = from > to ? -1 : 1)
-            if (direction > 0 && to >= from) { return }
-            if (direction < 0 && to <= from) { return }
-            this.element[prop] += direction
+        for (const prop in this.props.animate) {
+            // if (this.props.animate[prop] > 0 && this.props.animate[prop] >= this.element[prop]) { return }
+            // if (this.props.animate[prop] < 0 && this.props.animate[prop] <= this.element[prop]) { return }
+
+            this.element[prop] += this.props.animate[prop]
         }
 
         requestAnimationFrame(() => this.update())
