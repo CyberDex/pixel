@@ -9,7 +9,6 @@
 		"test": "jest",
 		"liveTest": "jest --watch",
 		"format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-		"lint": "tslint -p tsconfig.json",
 		"docs": "typedoc --options typedoc.json && webpack"
 	},
 	"repository": {
