@@ -6,7 +6,11 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"build": "tsc",
-		"test": "mocha --reporter spec"
+		"test": "jest",
+		"liveTest": "jest --watch",
+		"format": "prettier --write \"src/**/*.ts\"",
+		"lint": "tslint -p tsconfig.json",
+		"docs": "typedoc --options typedoc.json && webpack"
 	},
 	"repository": {
 		"type": "git",
@@ -20,12 +24,31 @@
 	"author": "Dmytro Soldatov <CyberDexx@gmail.com>",
 	"license": "ISC",
 	"dependencies": {
-		"@types/pixi.js": "^4.6.0",
 		"pixi.js": "^4.8.9"
 	},
 	"devDependencies": {
-		"chai": "^4.2.0",
-		"mocha": "^7.1.2",
+		"@types/jest": "^25.2.1",
+		"@types/node": "^13.13.4",
+		"@types/pixi.js": "^4.6.0",
+		"canvas": "^2.6.1",
+		"jest": "^25.5.2",
+		"jest-watch-master": "^1.0.0",
+		"prettier": "^2.0.5",
+		"ts-jest": "^25.4.0",
+		"tslint": "^6.1.2",
+		"tslint-config-prettier": "^1.18.0",
+		"typedoc": "^0.17.6",
 		"typescript": "^3.8.3"
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"files": [
+		"lib/**/*"
+	],
+	"jest": {
+		"watchPlugins": [
+			"jest-watch-master"
+		]
 	}
 }

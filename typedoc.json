@@ -1,0 +1,7 @@
+{
+    "name": "VideoMill",
+    "mode": "file",
+    "out": "public",
+    "hideGenerator": true,
+    "excludePrivate": false
+}
