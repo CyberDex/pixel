@@ -3,5 +3,6 @@
     "mode": "file",
     "out": "docs",
     "hideGenerator": true,
-    "excludePrivate": false
+    "excludePrivate": false,
+    "theme" :"./node_modules/typedoc-dark-theme/bin/default/"
 }
