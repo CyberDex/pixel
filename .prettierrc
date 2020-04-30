@@ -3,8 +3,8 @@
     "trailingComma": "all",
 	"tabWidth": 4,
 	"useTabs": true,
-	"semi": true,
-	"singleQuote": false,
+	"semi": false,
+	"singleQuote": true,
 	"bracketSpacing": true,
 	"arrowParens": "always",
 	"tslintIntegration": true
