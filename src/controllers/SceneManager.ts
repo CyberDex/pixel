@@ -6,7 +6,7 @@ export class SceneManager {
 		[key: string]: View
 	} = {}
 
-	public constructor(public app: App) {}
+	public constructor(public app: App) { }
 
 	public add(sceneName: string, sceneInst: View) {
 		this.scenes[sceneName] = sceneInst
@@ -29,7 +29,7 @@ export class SceneManager {
 	public showOnly(scene: string | string[]) {
 		for (const scn in this.scenes) {
 			if (this.scenes.hasOwnProperty(scn)) {
-				this.hide(scene)
+				this.hide(scn)
 			}
 		}
 		this.show(scene)
