@@ -9,7 +9,7 @@
 		"test": "jest",
 		"liveTest": "jest --watch",
 		"format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-		"docs": "typedoc --options typedoc.json && webpack"
+		"docs": "typedoc --options typedoc.json"
 	},
 	"repository": {
 		"type": "git",

@@ -1,7 +1,7 @@
 {
-    "name": "VideoMill",
+    "name": "Pixil",
     "mode": "file",
-    "out": "public",
+    "out": "docs",
     "hideGenerator": true,
     "excludePrivate": false
 }

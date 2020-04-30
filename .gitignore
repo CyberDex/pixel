@@ -5,6 +5,7 @@
 #General
 #-------------------------------------------------------------------------------
 lib
+docs
 node_modules
 *.tsx
 package-lock.json
