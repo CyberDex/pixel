@@ -19,7 +19,7 @@ const game = new  View()
 app.scenes.add("SPLASH", splash)
 app.scenes.add("GAME", game)
   
-const startButton = new  Button(50, 50, 200, 50, "Start Game", { fill:  "#ffffff" }, 25)
+const startButton = new  Button({text: "Start Game"})
 splash.addChild(startButton)
 startButton.onClick(() => {
   app.scenes.hide("SPLASH")
