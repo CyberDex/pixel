@@ -6,6 +6,5 @@
 	"semi": false,
 	"singleQuote": true,
 	"bracketSpacing": true,
-	"arrowParens": "always",
-	"tslintIntegration": true
+	"arrowParens": "always"
 }
