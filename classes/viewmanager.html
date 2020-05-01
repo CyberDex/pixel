@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Animation | Pixil</title>
+	<title>ViewManager | Pixil</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,400,400i,700" rel="stylesheet">
@@ -57,10 +57,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="animation.html">Animation</a>
+					<a href="viewmanager.html">ViewManager</a>
 				</li>
 			</ul>
-			<h1>Class Animation</h1>
+			<h1>Class ViewManager</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Animate [[DisplayObject]] class</p>
+						<p>Manager for <a href="viewmanager.html#add">add</a>, <a href="viewmanager.html#show">show</a> / <a href="viewmanager.html#hide">hide</a> <a href="view.html">View</a> instances</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>export</dt>
@@ -82,7 +82,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Animation</span>
+						<span class="target">ViewManager</span>
 					</li>
 				</ul>
 			</section>
@@ -93,29 +93,23 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="animation.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="animation.html#_isplaying" class="tsd-kind-icon">_is<wbr>Playing</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="animation.html#element" class="tsd-kind-icon">element</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="animation.html#props" class="tsd-kind-icon">props</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="viewmanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Accessors</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="animation.html#isplaying" class="tsd-kind-icon">is<wbr>Playing</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="viewmanager.html#app" class="tsd-kind-icon">app</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="viewmanager.html#scenes" class="tsd-kind-icon">scenes</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="animation.html#play" class="tsd-kind-icon">play</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="animation.html#stop" class="tsd-kind-icon">stop</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="animation.html#update" class="tsd-kind-icon">update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="viewmanager.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="viewmanager.html#hide" class="tsd-kind-icon">hide</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="viewmanager.html#show" class="tsd-kind-icon">show</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="viewmanager.html#showonly" class="tsd-kind-icon">show<wbr>Only</a></li>
 							</ul>
 						</section>
 					</div>
@@ -127,173 +121,194 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Animation<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DisplayObject</span>, props<span class="tsd-signature-symbol">: </span><a href="../interfaces/ianimation.html" class="tsd-signature-type">IAnimation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="animation.html" class="tsd-signature-type">Animation</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>View<wbr>Manager<span class="tsd-signature-symbol">(</span>app<span class="tsd-signature-symbol">: </span><a href="app.html" class="tsd-signature-type">App</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="viewmanager.html" class="tsd-signature-type">ViewManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/Animation.ts#L11">src/controllers/Animation.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/ViewManager.ts#L13">src/controllers/ViewManager.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>element: <span class="tsd-signature-type">DisplayObject</span></h5>
-								</li>
-								<li>
-									<h5>props: <a href="../interfaces/ianimation.html" class="tsd-signature-type">IAnimation</a></h5>
+									<h5>app: <a href="app.html" class="tsd-signature-type">App</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="animation.html" class="tsd-signature-type">Animation</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="viewmanager.html" class="tsd-signature-type">ViewManager</a></h4>
 						</li>
 					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_isplaying" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _is<wbr>Playing</h3>
-					<div class="tsd-signature tsd-kind-icon">_is<wbr>Playing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/Animation.ts#L11">src/controllers/Animation.ts:11</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="element" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> element</h3>
-					<div class="tsd-signature tsd-kind-icon">element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DisplayObject</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/Animation.ts#L13">src/controllers/Animation.ts:13</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="props" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> props</h3>
-					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <a href="../interfaces/ianimation.html" class="tsd-signature-type">IAnimation</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/Animation.ts#L13">src/controllers/Animation.ts:13</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="isplaying" class="tsd-anchor"></a>
-					<h3>is<wbr>Playing</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> isPlaying<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/Animation.ts#L60">src/controllers/Animation.ts:60</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p><a href="animation.html">Animation</a> state getter</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>readonly</dt>
-									<dd></dd>
-									<dt>memberof</dt>
-									<dd><p>Animation</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="app" class="tsd-anchor"></a>
+					<h3>app</h3>
+					<div class="tsd-signature tsd-kind-icon">app<span class="tsd-signature-symbol">:</span> <a href="app.html" class="tsd-signature-type">App</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/ViewManager.ts#L15">src/controllers/ViewManager.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="scenes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> scenes</h3>
+					<div class="tsd-signature tsd-kind-icon">scenes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/ViewManager.ts#L11">src/controllers/ViewManager.ts:11</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="view.html" class="tsd-signature-type">View</a></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="play" class="tsd-anchor"></a>
-					<h3>play</h3>
+					<a name="add" class="tsd-anchor"></a>
+					<h3>add</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">play<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>sceneName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, sceneInst<span class="tsd-signature-symbol">: </span><a href="view.html" class="tsd-signature-type">View</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/Animation.ts#L20">src/controllers/Animation.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/ViewManager.ts#L25">src/controllers/ViewManager.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Start playing animation</p>
+									<p>Add instance of <a href="view.html">View</a> to <a href="viewmanager.html">ViewManager</a> register
+									only first added <a href="view.html">View</a> instance will be visible</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>memberof</dt>
-									<dd><p>Animation</p>
+									<dd><p>ViewManager</p>
 									</dd>
 								</dl>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>sceneName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>sceneInst: <a href="view.html" class="tsd-signature-type">View</a></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="stop" class="tsd-anchor"></a>
-					<h3>stop</h3>
+					<a name="hide" class="tsd-anchor"></a>
+					<h3>hide</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">stop<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">hide<span class="tsd-signature-symbol">(</span>scene<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/Animation.ts#L30">src/controllers/Animation.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/ViewManager.ts#L52">src/controllers/ViewManager.ts:52</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Stop playing animation</p>
+									<p>Make <a href="view.html">View</a> instance hidden</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>memberof</dt>
-									<dd><p>Animation</p>
+									<dd><p>ViewManager</p>
 									</dd>
 								</dl>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>scene: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="update" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> update</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="show" class="tsd-anchor"></a>
+					<h3>show</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">show<span class="tsd-signature-symbol">(</span>scene<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, state<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/Animation.ts#L40">src/controllers/Animation.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/ViewManager.ts#L40">src/controllers/ViewManager.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Update element values</p>
+									<p>Make <a href="view.html">View</a> instance visible</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>memberof</dt>
-									<dd><p>Animation</p>
+									<dd><p>ViewManager</p>
 									</dd>
 								</dl>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>scene: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> state: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="showonly" class="tsd-anchor"></a>
+					<h3>show<wbr>Only</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">show<wbr>Only<span class="tsd-signature-symbol">(</span>scene<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/4cb2b19/src/controllers/ViewManager.ts#L62">src/controllers/ViewManager.ts:62</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Hide all registered <a href="view.html">View</a> instances and show only pointed one</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>ViewManager</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>scene: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -313,39 +328,9 @@
 					<li class=" tsd-kind-enum">
 						<a href="../enums/const.html" class="tsd-kind-icon">Const</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
+					<li class=" tsd-kind-class">
 						<a href="animation.html" class="tsd-kind-icon">Animation</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="animation.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="animation.html#_isplaying" class="tsd-kind-icon">_is<wbr>Playing</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="animation.html#element" class="tsd-kind-icon">element</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="animation.html#props" class="tsd-kind-icon">props</a>
-							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="animation.html#isplaying" class="tsd-kind-icon">is<wbr>Playing</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="animation.html#play" class="tsd-kind-icon">play</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="animation.html#stop" class="tsd-kind-icon">stop</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="animation.html#update" class="tsd-kind-icon">update</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="app.html" class="tsd-kind-icon">App</a>
 					</li>
@@ -364,9 +349,36 @@
 					<li class=" tsd-kind-class">
 						<a href="view.html" class="tsd-kind-icon">View</a>
 					</li>
-					<li class=" tsd-kind-class">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
 						<a href="viewmanager.html" class="tsd-kind-icon">View<wbr>Manager</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="viewmanager.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="viewmanager.html#app" class="tsd-kind-icon">app</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="viewmanager.html#scenes" class="tsd-kind-icon">scenes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="viewmanager.html#add" class="tsd-kind-icon">add</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="viewmanager.html#hide" class="tsd-kind-icon">hide</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="viewmanager.html#show" class="tsd-kind-icon">show</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="viewmanager.html#showonly" class="tsd-kind-icon">show<wbr>Only</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/ianimate.html" class="tsd-kind-icon">IAnimate</a>
 					</li>
