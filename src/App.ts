@@ -15,10 +15,12 @@ import { ViewManager } from './controllers/ViewManager'
 
 export class App extends Application {
 	public scenes: ViewManager
+	public layout: LayoutManager
 
 	public constructor(options?: object) {
 		super(options)
 		this.scenes = new ViewManager(this)
-		LayoutManager.instance.onResize((w, h) => this.renderer.resize(w, h))
+		this.layout = LayoutManager.instance
+		this.layout.onResize((w, h) => this.renderer.resize(w, h))
 	}
 }

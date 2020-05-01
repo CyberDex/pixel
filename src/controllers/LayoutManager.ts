@@ -61,6 +61,15 @@ export class LayoutManager {
 	}
 
 	/**
+	 * Manual layout update
+	 *
+	 * @memberof LayoutManager
+	 */
+	public update() {
+		this.resize()
+	}
+
+	/**
 	 * Window resize handler, will fire all registered events and notify all subscribers about resize
 	 *
 	 * @private
