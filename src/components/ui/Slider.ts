@@ -9,7 +9,7 @@ import { Graphics } from 'pixi.js'
  * @extends {View}
  */
 export class Slider extends View {
-	public value = 0
+	private _value = 0
 	private readonly background: Graphics
 	private readonly slider: Graphics
 	private sliderData: any
@@ -29,7 +29,7 @@ export class Slider extends View {
 		super(positionX, positionY)
 		this.width = w
 		this.height = h
-		this.value = min
+		this._value = min
 		const radius = h / 2
 		this.background = this.addRect(-h / 2, 0, w + h, h, bgColor, radius)
 		this.addChild(this.background)
@@ -55,7 +55,7 @@ export class Slider extends View {
 	 */
 	public onChange(cb: { (data: number): void }): number {
 		this.cb.push(cb)
-		return this.cb.length
+		return this.cb.length - 1
 	}
 
 	/**
@@ -115,10 +115,20 @@ export class Slider extends View {
 		if (this.sliderDragging) {
 			const newPosition = this.sliderData.getLocalPosition(this)
 			this.slider.x = newPosition.x > this.w ? this.w : newPosition.x < 0 ? 0 : newPosition.x
-			this.value = Math.round(
+			this._value = Math.round(
 				this.min + ((this.max - this.min) / 100) * Math.round((this.slider.x * 100) / this.w),
 			)
-			this.cb.forEach((cb) => cb(this.value))
+			this.cb.forEach((cb) => cb(this._value))
 		}
+	}
+
+	/**
+	 * Slider value getter
+	 *
+	 * @readonly
+	 * @memberof Slider
+	 */
+	public get value() {
+		return this._value
 	}
 }

@@ -46,7 +46,12 @@ export class View extends Container {
 	 * @returns
 	 * @memberof View
 	 */
-	public addText(text: string, style: TextStyle, positionX: number, positionY: number) {
+	public addText(
+		text = '',
+		style?: TextStyle,
+		positionX = Const.positionX,
+		positionY = Const.positionY) {
+
 		const textEl = new Label(text, style, positionX, positionY)
 		this.addChild(textEl)
 		return textEl

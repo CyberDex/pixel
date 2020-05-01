@@ -75,7 +75,7 @@ export class Button extends View {
 	 */
 	public onClick(cb: { (): void }): number {
 		this.cb.push(cb)
-		return this.cb.length
+		return this.cb.length - 1
 	}
 
 	/**

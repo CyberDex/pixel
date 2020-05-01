@@ -10,6 +10,7 @@ describe('App module', () => {
 		app = new App()
 		expect(app).toBeDefined()
 		expect(app).toBeInstanceOf(Application)
-		expect(app.scenes).toBeInstanceOf(ViewManager)
+		expect(app.views).toBeInstanceOf(ViewManager)
+		expect(app.views).toBeInstanceOf(ViewManager)
 	})
 })
