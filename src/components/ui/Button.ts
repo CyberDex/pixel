@@ -2,20 +2,37 @@ import { View } from '../View'
 import { Graphics } from 'pixi.js'
 import { Label } from '../..'
 import { Const } from '../../helpers/const';
+import { IButton } from '../../helpers/interfaces/IButton';
 
+/**
+ * Class for buttons creation
+ *
+ * @export
+ * @class Button
+ * @extends {View}
+ */
 export class Button extends View {
 
+	/**
+	 * Activate button (make it clickable)
+	 *
+	 * @memberof Button
+	 */
 	public set active(active: boolean) {
 		this.alpha = active ? 1 : .5
 		this.buttonMode = active
 		this._active = active
 	}
 
+	/**
+	 * Get activation button status
+	 *
+	 * @memberof Button
+	 */
 	public get active() {
 		return this._active
 	}
 	private readonly background: Graphics
-	private readonly text: Text
 	private readonly cb: { (): void }[] = []
 	private pressed = false
 	private _active = true
@@ -43,11 +60,24 @@ export class Button extends View {
 			.on('pointerupoutside', () => this.onMouseOut())
 	}
 
+	/**
+	 * Register [[Button]] click callback, returns event ID to unregister event with [[offClick]] method
+	 *
+	 * @param {{ (): void }} cb
+	 * @returns {number}
+	 * @memberof Button
+	 */
 	public onClick(cb: { (): void }): number {
 		this.cb.push(cb)
 		return this.cb.length
 	}
 
+	/**
+	 * Unregister [[Button]] click callback
+	 *
+	 * @param {number} cbID
+	 * @memberof Button
+	 */
 	public offClick(cbID: number) {
 		delete this.cb[cbID]
 	}
@@ -59,9 +89,9 @@ export class Button extends View {
 	}
 
 	private onUp() {
+		if (!this.pressed) { return }
 		this.scale.set(1)
 		this.pressed = false
-		if (!this._active) { return }
 		this.cb.forEach(cb => cb())
 	}
 
@@ -69,15 +99,4 @@ export class Button extends View {
 		this.scale.set(1)
 		this.pressed = false
 	}
-}
-
-export interface IButton {
-	text?: string
-	positionX?: number
-	positionY?: number
-	width?: number
-	height?: number
-	radius?: number
-	color?: number | string
-	style?: any
 }
