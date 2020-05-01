@@ -1,6 +1,6 @@
 {
 	"name": "pixil",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"description": "Wrapper engine for pixi js",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
