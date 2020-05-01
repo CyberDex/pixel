@@ -70,11 +70,13 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Convenience class to create a new PIXI application.
-							This class automatically creates the renderer, ticker and root container.
-							Additional functionality from Pixil is resize <a href="app.html#renderer">renderer</a> with <a href="layoutmanager.html">LayoutManager</a>
-						Also <a href="viewmanager.html">ViewManager</a> instance will be created and will be available for use with &#39;App.scenes&#39; construction</p>
+						<p>Convenience class to create a new PIXI application.</p>
 					</div>
+					<p>This class automatically creates the renderer, ticker and root container.</p>
+					<p>Additional functionality from Pixil is resize <a href="app.html#renderer">renderer</a> with <a href="layoutmanager.html">LayoutManager</a></p>
+					<p>Also <a href="viewmanager.html">ViewManager</a> instance will be created and will be available for use with &#39;App.scenes&#39; construction</p>
+					<p>App.views holds an instance of <a href="viewmanager.html">ViewManager</a></p>
+					<p>App.layout holds an instance of <a href="layoutmanager.html">LayoutManager</a></p>
 					<dl class="tsd-comment-tags">
 						<dt>export</dt>
 						<dd></dd>
@@ -110,11 +112,11 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#layout" class="tsd-kind-icon">layout</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="app.html#loader" class="tsd-kind-icon">loader</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="app.html#renderer" class="tsd-kind-icon">renderer</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#scenes" class="tsd-kind-icon">scenes</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="app.html#screen" class="tsd-kind-icon">screen</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="app.html#stage" class="tsd-kind-icon">stage</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="app.html#ticker" class="tsd-kind-icon">ticker</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="app.html#view" class="tsd-kind-icon">view</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#views" class="tsd-kind-icon">views</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited">
@@ -142,7 +144,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Application.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/a7a1afd/src/App.ts#L18">src/App.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/6ab2052/src/App.ts#L24">src/App.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -164,7 +166,7 @@
 					<div class="tsd-signature tsd-kind-icon">layout<span class="tsd-signature-symbol">:</span> <a href="layoutmanager.html" class="tsd-signature-type">LayoutManager</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/a7a1afd/src/App.ts#L18">src/App.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/6ab2052/src/App.ts#L24">src/App.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -192,16 +194,6 @@
 						<p>Inherited from <a href="app.html">App</a>.<a href="app.html#renderer">renderer</a></p>
 						<ul>
 							<li>Defined in node_modules/@types/pixi.js/index.d.ts:537</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="scenes" class="tsd-anchor"></a>
-					<h3>scenes</h3>
-					<div class="tsd-signature tsd-kind-icon">scenes<span class="tsd-signature-symbol">:</span> <a href="viewmanager.html" class="tsd-signature-type">ViewManager</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/a7a1afd/src/App.ts#L17">src/App.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -246,6 +238,16 @@
 						<p>Inherited from <a href="app.html">App</a>.<a href="app.html#view">view</a></p>
 						<ul>
 							<li>Defined in node_modules/@types/pixi.js/index.d.ts:565</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="views" class="tsd-anchor"></a>
+					<h3>views</h3>
+					<div class="tsd-signature tsd-kind-icon">views<span class="tsd-signature-symbol">:</span> <a href="viewmanager.html" class="tsd-signature-type">ViewManager</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/6ab2052/src/App.ts#L23">src/App.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -388,9 +390,6 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="app.html#renderer" class="tsd-kind-icon">renderer</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="app.html#scenes" class="tsd-kind-icon">scenes</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="app.html#screen" class="tsd-kind-icon">screen</a>
 							</li>
@@ -402,6 +401,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="app.html#view" class="tsd-kind-icon">view</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="app.html#views" class="tsd-kind-icon">views</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="app.html#destroy" class="tsd-kind-icon">destroy</a>
