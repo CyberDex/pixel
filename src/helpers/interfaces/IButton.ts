@@ -1,23 +1,21 @@
-
-import { Graphics, TextStyle } from 'pixi.js'
+import { TextStyle } from 'pixi.js'
 
 export interface IButton {
-
 	/**
 	 * Button text
 	 *
 	 * @type {string}
 	 * @memberof IButton
 	 */
-    text?: string
+	text?: string
 
 	/**
-	 * Button horisontal position in % from canvas width
+	 * Button horizontal position in % from canvas width
 	 *
 	 * @type {number}
 	 * @memberof IButton
 	 */
-    positionX?: number
+	positionX?: number
 
 	/**
 	 * Button vertical position in % from canvas width
@@ -25,7 +23,7 @@ export interface IButton {
 	 * @type {number}
 	 * @memberof IButton
 	 */
-    positionY?: number
+	positionY?: number
 
 	/**
 	 * Button width
@@ -33,7 +31,7 @@ export interface IButton {
 	 * @type {number}
 	 * @memberof IButton
 	 */
-    width?: number
+	width?: number
 
 	/**
 	 * Button height
@@ -41,7 +39,7 @@ export interface IButton {
 	 * @type {number}
 	 * @memberof IButton
 	 */
-    height?: number
+	height?: number
 
 	/**
 	 * Button corner rounding radius
@@ -49,15 +47,15 @@ export interface IButton {
 	 * @type {number}
 	 * @memberof IButton
 	 */
-    radius?: number
+	radius?: number
 
 	/**
-	 * Button background colour
+	 * Button background color
 	 *
 	 * @type {(number | string)}
 	 * @memberof IButton
 	 */
-    color?: number | string
+	color?: number | string
 
 	/**
 	 * Button text style
@@ -65,5 +63,5 @@ export interface IButton {
 	 * @type {*}
 	 * @memberof IButton
 	 */
-    style?: TextStyle
+	style?: TextStyle
 }

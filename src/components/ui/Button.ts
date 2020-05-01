@@ -1,25 +1,24 @@
 import { View } from '../View'
 import { Graphics } from 'pixi.js'
 import { Label } from '../..'
-import { Const } from '../../helpers/const';
-import { IButton } from '../../helpers/interfaces/IButton';
+import { Const } from '../../helpers/const'
+import { IButton } from '../../helpers/interfaces/IButton'
 
 /**
- * Class for buttons creation
+ * Class for buttons creation with [[View]] repositioning functionality
  *
  * @export
  * @class Button
  * @extends {View}
  */
 export class Button extends View {
-
 	/**
 	 * Activate button (make it clickable)
 	 *
 	 * @memberof Button
 	 */
 	public set active(active: boolean) {
-		this.alpha = active ? 1 : .5
+		this.alpha = active ? 1 : 0.5
 		this.buttonMode = active
 		this._active = active
 	}
@@ -46,7 +45,14 @@ export class Button extends View {
 		this.positionX = props.positionX || 50
 		this.positionY = props.positionY || 50
 
-		this.background = this.addRect(0, 0, props.width, props.height, Number(props.color || Const.defaultColor), props.radius || 0)
+		this.background = this.addRect(
+			0,
+			0,
+			props.width,
+			props.height,
+			Number(props.color || Const.defaultColor),
+			props.radius || 0,
+		)
 		this.addChild(this.background)
 		this.background.x = -props.width / 2
 		this.background.y = -props.height / 2
@@ -82,19 +88,41 @@ export class Button extends View {
 		delete this.cb[cbID]
 	}
 
+	/**
+	 * 'Pointerdown' handler
+	 *
+	 * @private
+	 * @memberof Button
+	 */
 	private onDown() {
-		if (!this._active) { return }
+		if (!this._active) {
+			return
+		}
 		this.pressed = true
 		this.scale.set(0.95)
 	}
 
+	/**
+	 * 'Pointerup' handler
+	 *
+	 * @private
+	 * @memberof Button
+	 */
 	private onUp() {
-		if (!this.pressed) { return }
+		if (!this.pressed) {
+			return
+		}
 		this.scale.set(1)
 		this.pressed = false
-		this.cb.forEach(cb => cb())
+		this.cb.forEach((cb) => cb())
 	}
 
+	/**
+	 * 'Pointerupoutside' handler
+	 *
+	 * @private
+	 * @memberof Button
+	 */
 	private onMouseOut() {
 		this.scale.set(1)
 		this.pressed = false

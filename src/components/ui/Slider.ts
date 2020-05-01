@@ -1,6 +1,13 @@
 import { View } from '../View'
 import { Graphics } from 'pixi.js'
 
+/**
+ * Class for slider creation with [[View]] repositioning functionality
+ *
+ * @export
+ * @class Slider
+ * @extends {View}
+ */
 export class Slider extends View {
 	public value = 0
 	private readonly background: Graphics
@@ -38,19 +45,73 @@ export class Slider extends View {
 			.on('pointermove', (event) => this.onDragMove())
 	}
 
-	public onDragStart(event) {
+	/**
+	 * Register [[Slider]] value change callback, returns event ID to unregister event with [[offChange]] method
+	 *
+	 *
+	 * @param {{ (data: number): void }} cb
+	 * @returns {number}
+	 * @memberof Slider
+	 */
+	public onChange(cb: { (data: number): void }): number {
+		this.cb.push(cb)
+		return this.cb.length
+	}
+
+	/**
+	 * Unregister [[Slider]] value change callback
+	 *
+	 * @param {number} cbID
+	 * @memberof Slider
+	 */
+	public offChange(cbID: number) {
+		delete this.cb[cbID]
+	}
+
+	/**
+	 * Canvas resize handler
+	 *
+	 * @param {number} w
+	 * @param {number} h
+	 * @memberof Slider
+	 */
+	public onResize(w: number, h: number) {
+		this.x = w / 2 - this.w / 2
+		this.y = h / 2 - this.h / 2
+	}
+
+	/**
+	 * 'Pointerdown' hanler
+	 *
+	 * @private
+	 * @param {*} event
+	 * @memberof Slider
+	 */
+	private onDragStart(event) {
 		this.slider.scale.set(0.95)
 		this.sliderData = event.data
 		this.sliderDragging = true
 	}
 
-	public onDragEnd() {
+	/**
+	 * 'Pointerup' handler
+	 *
+	 * @private
+	 * @memberof Slider
+	 */
+	private onDragEnd() {
 		this.sliderDragging = false
 		this.sliderData = null
 		this.slider.scale.set(1)
 	}
 
-	public onDragMove() {
+	/**
+	 * 'Pointermove' handler
+	 *
+	 * @private
+	 * @memberof Slider
+	 */
+	private onDragMove() {
 		if (this.sliderDragging) {
 			const newPosition = this.sliderData.getLocalPosition(this)
 			this.slider.x = newPosition.x > this.w ? this.w : newPosition.x < 0 ? 0 : newPosition.x
@@ -59,19 +120,5 @@ export class Slider extends View {
 			)
 			this.cb.forEach((cb) => cb(this.value))
 		}
-	}
-
-	public onChange(cb: { (data: number): void }): number {
-		this.cb.push(cb)
-		return this.cb.length
-	}
-
-	public offChange(cbID: number) {
-		delete this.cb[cbID]
-	}
-
-	public onResize(w: number, h: number) {
-		this.x = w / 2 - this.w / 2
-		this.y = h / 2 - this.h / 2
 	}
 }
