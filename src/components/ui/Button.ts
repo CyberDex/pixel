@@ -1,5 +1,5 @@
 import { View } from '../View'
-import { Graphics } from 'pixi.js'
+import { Graphics, TextStyle } from 'pixi.js'
 import { Label } from '../..'
 import { Const } from '../../helpers/const'
 import { IButton } from '../../helpers/interfaces/IButton'
@@ -57,7 +57,7 @@ export class Button extends View {
 		this.background.x = -props.width / 2
 		this.background.y = -props.height / 2
 
-		this.addChild(new Label(props.text || '', props.style || { fill: '#ffffff' }, 0, 0))
+		this.addChild(new Label(props.text || '', props.style || { fill: '#ffffff' } as TextStyle, 0, 0))
 
 		this.interactive = true
 		this.buttonMode = true

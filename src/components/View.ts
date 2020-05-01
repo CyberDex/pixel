@@ -4,7 +4,7 @@ import { Label } from './Label'
 import { Const } from '../helpers/const'
 
 /**
- * Base component of [[Pixil]], has reposition functionality for comfortable building of adaptive applications
+ * Base component of Pixil, has reposition functionality for comfortable building of adaptive applications
  *
  * @export
  * @class View
@@ -53,7 +53,7 @@ export class View extends Container {
 	}
 
 	/**
-	 * Add [[RoundedRect]] [[Graphics]] element to [[View]]
+	 * Add rounded rect element to [[View]]
 	 *
 	 * @param {*} [positionX=Const.positionX]
 	 * @param {*} [positionY=Const.positionY]
@@ -81,7 +81,7 @@ export class View extends Container {
 	}
 
 	/**
-	 * Add [[drawCircle]] [[Graphics]] element to [[View]]
+	 * Add circle element to [[View]]
 	 *
 	 * @param {number} [x=0]
 	 * @param {number} [y=0]
@@ -107,7 +107,9 @@ export class View extends Container {
 
 	/**
 	 * Canvas resize handler. It will reposition all elements on View depending on their [[positionX]] and [[positionY]] values.
+	 * 
 	 * [[positionX]] - is position in % of canvas width
+	 * 
 	 * [[positionY]] - is position in % of canvas height
 	 *
 	 * @param {number} canvasWidth
