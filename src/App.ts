@@ -1,12 +1,12 @@
 import { Application } from 'pixi.js'
 import { LayoutManager } from './controllers/LayoutManager'
-import { SceneManager } from './controllers/ViewManager'
+import { ViewManager } from './controllers/ViewManager'
 
 /**
  * Convenience class to create a new PIXI application.
  * This class automatically creates the renderer, ticker and root container.
  * Additional functionality from [[Pixil]] is resize [[renderer]] with [[LayoutManager]]
- * Also [[SceneManager]] instance will be created and will be available for use with 'App.scenes' construction
+ * Also [[ViewManager]] instance will be created and will be available for use with 'App.scenes' construction
  *
  * @export
  * @class App
@@ -14,11 +14,11 @@ import { SceneManager } from './controllers/ViewManager'
  */
 
 export class App extends Application {
-	public scenes: SceneManager
+	public scenes: ViewManager
 
 	public constructor(options?: object) {
 		super(options)
-		this.scenes = new SceneManager(this)
+		this.scenes = new ViewManager(this)
 		LayoutManager.instance.onResize((w, h) => this.renderer.resize(w, h))
 	}
 }

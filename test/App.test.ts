@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import { App, SceneManager } from '../src/index'
+import { App, ViewManager } from '../src/index'
 import { Application } from 'pixi.js'
 let app: App
 
@@ -10,6 +10,6 @@ describe('App module', () => {
 		app = new App()
 		expect(app).toBeDefined()
 		expect(app).toBeInstanceOf(Application)
-		expect(app.scenes).toBeInstanceOf(SceneManager)
+		expect(app.scenes).toBeInstanceOf(ViewManager)
 	})
 })
