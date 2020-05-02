@@ -11,10 +11,7 @@ import { Const } from '../helpers/const'
  * @extends {Container}
  */
 export class View extends Container {
-	public constructor(
-		public positionX = 50,
-		public positionY = 50
-	) {
+	public constructor(public positionX = 50, public positionY = 50) {
 		super()
 		LayoutManager.instance.onResize((w, h) => this.onResize(w, h))
 	}
@@ -29,12 +26,7 @@ export class View extends Container {
 	 * @returns
 	 * @memberof View
 	 */
-	public addText(
-		text = '',
-		style?: TextStyle,
-		positionX = Const.positionX,
-		positionY = Const.positionY) {
-
+	public addText(text = '', style?: TextStyle, positionX = Const.positionX, positionY = Const.positionY) {
 		const textEl = new Label(text, style, positionX, positionY)
 		this.addChild(textEl)
 		return textEl
@@ -95,9 +87,9 @@ export class View extends Container {
 
 	/**
 	 * Canvas resize handler. It will reposition all elements on View depending on their [[positionX]] and [[positionY]] values.
-	 * 
+	 *
 	 * [[positionX]] - is position in % of canvas width
-	 * 
+	 *
 	 * [[positionY]] - is position in % of canvas height
 	 *
 	 * @param {number} canvasWidth

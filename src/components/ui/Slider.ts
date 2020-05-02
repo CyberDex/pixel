@@ -14,7 +14,7 @@ export class Slider extends View {
 	private readonly slider: Graphics
 	private sliderData: any
 	private sliderDragging = false
-	private readonly cb: { (data: number): void }[] = []
+	private readonly cb: ((data: number) => void)[] = []
 
 	public constructor(
 		public positionX = 50,
@@ -53,7 +53,7 @@ export class Slider extends View {
 	 * @returns {number}
 	 * @memberof Slider
 	 */
-	public onChange(cb: { (data: number): void }): number {
+	public onChange(cb: (data: number) => void): number {
 		this.cb.push(cb)
 		return this.cb.length - 1
 	}

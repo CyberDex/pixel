@@ -7,7 +7,6 @@ import { Graphics } from 'pixi.js'
 const view: View = new View()
 
 describe('View module', () => {
-
 	test('Create View', () => {
 		expect(view).toBeDefined()
 	})
@@ -26,5 +25,4 @@ describe('View module', () => {
 		const сircle = view.addCircle(50, 50, 100)
 		expect(сircle).toBeInstanceOf(Graphics)
 	})
-
 })

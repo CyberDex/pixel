@@ -32,7 +32,7 @@ export class Button extends View {
 		return this._active
 	}
 	private readonly background: Graphics
-	private readonly cb: { (): void }[] = []
+	private readonly cb: (() => void)[] = []
 	private pressed = false
 	private _active = true
 
@@ -57,7 +57,7 @@ export class Button extends View {
 		this.background.x = -props.width / 2
 		this.background.y = -props.height / 2
 
-		this.addChild(new Label(props.text || '', props.style || { fill: '#ffffff' } as TextStyle, 0, 0))
+		this.addChild(new Label(props.text || '', props.style || ({ fill: '#ffffff' } as TextStyle), 0, 0))
 
 		this.interactive = true
 		this.buttonMode = true
@@ -73,7 +73,7 @@ export class Button extends View {
 	 * @returns {number}
 	 * @memberof Button
 	 */
-	public onClick(cb: { (): void }): number {
+	public onClick(cb: () => void): number {
 		this.cb.push(cb)
 		return this.cb.length - 1
 	}

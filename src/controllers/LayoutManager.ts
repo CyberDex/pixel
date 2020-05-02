@@ -29,7 +29,7 @@ export class LayoutManager {
 	 */
 	public height: number
 
-	private readonly cb: { (canvasWidth: number, canvasHeight: number): void }[] = []
+	private readonly cb: ((canvasWidth: number, canvasHeight: number) => void)[] = []
 
 	private constructor() {
 		this.width = window.innerWidth
@@ -45,7 +45,7 @@ export class LayoutManager {
 	 * @returns {number}
 	 * @memberof LayoutManager
 	 */
-	public onResize(cb: { (canvasWidth: number, canvasHeight: number): void }): number {
+	public onResize(cb: (canvasWidth: number, canvasHeight: number) => void): number {
 		this.cb.push(cb)
 		return this.cb.length
 	}
