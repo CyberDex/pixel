@@ -11,28 +11,11 @@ import { Const } from '../helpers/const'
  * @extends {Container}
  */
 export class View extends Container {
-	private readonly bg: Sprite
-
 	public constructor(
 		public positionX = 50,
-		public positionY = 50,
-		public bgImage?: string,
-		public content?: {
-			[key: string]: View
-		},
+		public positionY = 50
 	) {
 		super()
-		if (bgImage) {
-			this.bg = Sprite.fromImage(bgImage)
-			this.addChild(this.bg)
-		}
-		if (content) {
-			for (const child in content) {
-				if (content.hasOwnProperty(child)) {
-					this.addChild(content[child])
-				}
-			}
-		}
 		LayoutManager.instance.onResize((w, h) => this.onResize(w, h))
 	}
 
