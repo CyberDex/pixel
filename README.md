@@ -1,31 +1,35 @@
 # Pixil
+
 Wrapper engine for [pixi.js](https://github.com/pixijs/pixi.js)
 
 Documentation can be found [here](https://cyberdex.github.io/pixil/)
 
 ## Usage
+
 ```
 npm i pixil
 ```
 
 ```javascript
-import { App, View, Label, Button } from  'pixil'
+import { App, View, Label, Button } from 'pixil'
 
-const app = new  App({ antialias:  true })
+const app = new App({ antialias: true })
+
 document.body.appendChild(app.view)
-const splash = new  View(0, 0)
-const game = new  View()
 
-app.scenes.add("SPLASH", splash)
-app.scenes.add("GAME", game)
-  
-const startButton = new  Button({text: "Start Game"})
+const splash = new View(0, 0)
+const game = new View()
+
+app.views.add('SPLASH', splash)
+app.views.add('GAME', game)
+
+const startButton = new Button({ text: 'Press me', width: 250, height: 60, radius: 30 })
 splash.addChild(startButton)
 startButton.onClick(() => {
-  app.scenes.hide("SPLASH")
-  app.scenes.show("GAME")
+	app.views.hide('SPLASH')
+	app.views.show('GAME')
 })
 
-const gameText = new  Label("GamePlay", { fill:  "#ffffff" }, 50, 50)
+const gameText = new Label('It Works!!!', { fill: '#ffffff' }, 50, 50)
 game.addChild(gameText)
 ```
