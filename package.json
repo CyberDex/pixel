@@ -36,6 +36,7 @@
 		"@types/node": "^13.13.4",
 		"@types/pixi.js": "^4.6.0",
 		"canvas": "^2.6.1",
+		"codecov": "^3.6.5",
 		"jest": "^25.5.2",
 		"jest-watch-master": "^1.0.0",
 		"prettier": "^2.0.5",
