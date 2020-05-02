@@ -1,23 +1,14 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "ES6",
-        "lib": [
-            "es2017",
-            "es7",
-            "es6",
-            "dom"
-        ],
-        "sourceMap": true,
-        "noImplicitAny": false,
-        "strict": false,
-        "resolveJsonModule": true,
-        "declaration": true,
-        "outDir": "./lib"
-    },
-    "exclude": [
-        "node_modules",
-        "test",
-        "dist"
-    ]
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"declaration": true,
+		"outDir": "./lib",
+		"strict": true,
+		"sourceMap": true,
+		"noImplicitAny": false,
+		"resolveJsonModule": true
+	},
+	"include": ["src"],
+	"exclude": ["node_modules", "test"]
 }
