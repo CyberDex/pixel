@@ -1,7 +1,5 @@
 # Pixil
 
-[![Codecov Coverage](https://img.shields.io/codecov/c/github/CyberDex/Pixil/master.svg?style=flat-square)](https://codecov.io/gh/CyberDex/Pixil/)
-
 Wrapper engine for [pixi.js](https://github.com/pixijs/pixi.js)
 
 Documentation can be found [here](https://cyberdex.github.io/pixil/)
