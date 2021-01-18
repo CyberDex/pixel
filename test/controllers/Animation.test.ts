@@ -20,8 +20,8 @@ describe('Animation controller', () => {
 				y: 10,
 				width: 10,
 				height: 10,
-				rotation: 10
-			}
+				rotation: 10,
+			},
 		})
 
 		expect(animation).toBeDefined()
@@ -45,6 +45,5 @@ describe('Animation controller', () => {
 		expect(label.width).toBeGreaterThan(1)
 		expect(label.height).toBeGreaterThan(1)
 		expect(label.rotation).toBeGreaterThan(1)
-
 	})
 })
