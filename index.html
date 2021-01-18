@@ -73,7 +73,7 @@
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
 				</a>
-				<pre><code><span class="hljs-built_in">npm</span> i pixil</code></pre><pre><code class="language-javascript"><span class="hljs-keyword">import</span> { App, View, Label, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'pixil'</span>
+				<pre><code><span class="hljs-built_in">npm</span> i pixil</code></pre><pre><code class="language-javascript"><span class="hljs-keyword">import</span> { App, View, Label, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;pixil&#x27;</span>
 
 <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> App({ <span class="hljs-attr">antialias</span>: <span class="hljs-literal">true</span> })
 
@@ -82,17 +82,17 @@
 <span class="hljs-keyword">const</span> splash = <span class="hljs-keyword">new</span> View(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
 <span class="hljs-keyword">const</span> game = <span class="hljs-keyword">new</span> View()
 
-app.views.add(<span class="hljs-string">'SPLASH'</span>, splash)
-app.views.add(<span class="hljs-string">'GAME'</span>, game)
+app.views.add(<span class="hljs-string">&#x27;SPLASH&#x27;</span>, splash)
+app.views.add(<span class="hljs-string">&#x27;GAME&#x27;</span>, game)
 
-<span class="hljs-keyword">const</span> startButton = <span class="hljs-keyword">new</span> Button({ <span class="hljs-attr">text</span>: <span class="hljs-string">'Press me'</span>, <span class="hljs-attr">width</span>: <span class="hljs-number">250</span>, <span class="hljs-attr">height</span>: <span class="hljs-number">60</span>, <span class="hljs-attr">radius</span>: <span class="hljs-number">30</span> })
+<span class="hljs-keyword">const</span> startButton = <span class="hljs-keyword">new</span> Button({ <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Press me&#x27;</span>, <span class="hljs-attr">width</span>: <span class="hljs-number">250</span>, <span class="hljs-attr">height</span>: <span class="hljs-number">60</span>, <span class="hljs-attr">radius</span>: <span class="hljs-number">30</span> })
 splash.addChild(startButton)
-startButton.onClick(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    app.views.hide(<span class="hljs-string">'SPLASH'</span>)
-    app.views.show(<span class="hljs-string">'GAME'</span>)
+startButton.onClick(<span class="hljs-function">() =&gt;</span> {
+    app.views.hide(<span class="hljs-string">&#x27;SPLASH&#x27;</span>)
+    app.views.show(<span class="hljs-string">&#x27;GAME&#x27;</span>)
 })
 
-<span class="hljs-keyword">const</span> gameText = <span class="hljs-keyword">new</span> Label(<span class="hljs-string">'It Works!!!'</span>, { <span class="hljs-attr">fill</span>: <span class="hljs-string">'#ffffff'</span> }, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>)
+<span class="hljs-keyword">const</span> gameText = <span class="hljs-keyword">new</span> Label(<span class="hljs-string">&#x27;It Works!!!&#x27;</span>, { <span class="hljs-attr">fill</span>: <span class="hljs-string">&#x27;#ffffff&#x27;</span> }, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>)
 game.addChild(gameText)</code></pre>
 			</div>
 		</div>
