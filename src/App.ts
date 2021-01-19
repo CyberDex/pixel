@@ -29,4 +29,25 @@ export class App extends Application {
 		this.layout = LayoutManager.instance
 		this.layout.onResize((w, h) => this.renderer.resize(w, h))
 	}
+
+	public async loadAssets(assets: string[]) {
+		for (const asset of assets) {
+			await this.loadAsset(asset)
+		}
+	}
+
+	public loadAsset(url): Promise<void> {
+		const loader = new PIXI.loaders.Loader()
+		return new Promise(resolve => {
+			loader
+				.add(url)
+				.load(resolve)
+		})
+	}
+
+
+	public async loadConfig(config: string): Promise<Object> {
+		const response = await fetch(config)
+		return response.json()
+	}
 }
