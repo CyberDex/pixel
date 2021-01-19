@@ -119,10 +119,13 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="app.html#views" class="tsd-kind-icon">views</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="app.html#destroy" class="tsd-kind-icon">destroy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#loadasset" class="tsd-kind-icon">load<wbr>Asset</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#loadassets" class="tsd-kind-icon">load<wbr>Assets</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="app.html#loadconfig" class="tsd-kind-icon">load<wbr>Config</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="app.html#render" class="tsd-kind-icon">render</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="app.html#start" class="tsd-kind-icon">start</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="app.html#stop" class="tsd-kind-icon">stop</a></li>
@@ -144,7 +147,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Application.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/a7714c0/src/App.ts#L24">src/App.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/e266647/src/App.ts#L24">src/App.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -166,7 +169,7 @@
 					<div class="tsd-signature tsd-kind-icon">layout<span class="tsd-signature-symbol">:</span> <a href="layoutmanager.html" class="tsd-signature-type">LayoutManager</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/a7714c0/src/App.ts#L24">src/App.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/e266647/src/App.ts#L24">src/App.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -247,12 +250,12 @@
 					<div class="tsd-signature tsd-kind-icon">views<span class="tsd-signature-symbol">:</span> <a href="viewmanager.html" class="tsd-signature-type">ViewManager</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/a7714c0/src/App.ts#L23">src/App.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/e266647/src/App.ts#L23">src/App.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="destroy" class="tsd-anchor"></a>
@@ -283,6 +286,75 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="loadasset" class="tsd-anchor"></a>
+					<h3>load<wbr>Asset</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Asset<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/e266647/src/App.ts#L39">src/App.ts:39</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="loadassets" class="tsd-anchor"></a>
+					<h3>load<wbr>Assets</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Assets<span class="tsd-signature-symbol">(</span>assets<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/e266647/src/App.ts#L33">src/App.ts:33</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>assets: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="loadconfig" class="tsd-anchor"></a>
+					<h3>load<wbr>Config</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Config<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/e266647/src/App.ts#L49">src/App.ts:49</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>config: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -408,6 +480,15 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="app.html#destroy" class="tsd-kind-icon">destroy</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="app.html#loadasset" class="tsd-kind-icon">load<wbr>Asset</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="app.html#loadassets" class="tsd-kind-icon">load<wbr>Assets</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="app.html#loadconfig" class="tsd-kind-icon">load<wbr>Config</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="app.html#render" class="tsd-kind-icon">render</a>
 							</li>
@@ -432,6 +513,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="slider.html" class="tsd-kind-icon">Slider</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="sprite.html" class="tsd-kind-icon">Sprite</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="view.html" class="tsd-kind-icon">View</a>
