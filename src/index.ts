@@ -7,4 +7,5 @@ import { Label } from './components/Label'
 import { Animation } from './controllers/Animation'
 import { IAnimation, IAnimate } from './helpers/interfaces/IAnimation'
 import { IButton } from './helpers/interfaces/IButton'
-export { App, View, Slider, Button, ViewManager, Label, Animation, IAnimation, IAnimate, IButton }
+import { Sprite } from './components/Sprite'
+export { App, View, Slider, Button, ViewManager, Label, Animation, IAnimation, IAnimate, IButton, Sprite }
