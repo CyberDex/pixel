@@ -1,5 +1,5 @@
 import { Graphics } from 'pixi.js'
-import { IComponent } from './IComponent'
+import { IComponent } from '../basic/IComponent'
 
 export class Rect extends Graphics {
   public positionX?: number

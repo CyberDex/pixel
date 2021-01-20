@@ -1,9 +1,9 @@
 import { Container } from 'pixi.js'
 import { LayoutManager } from '../controllers/LayoutManager'
-import { ILabel, Label } from './basic/Label'
 import { ISprite, Sprite } from './basic/Sprite'
 import { IRect, Rect } from './basic/Rect'
 import { Circle, ICircle } from './basic/Circle'
+import { ILabel, Label } from './basic/Label'
 
 export class View extends Container {
 	public constructor(

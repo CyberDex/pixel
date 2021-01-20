@@ -1,5 +1,5 @@
 import { Graphics } from 'pixi.js'
-import { IComponent } from '../../interfaces'
+import { IComponent } from './IComponent'
 
 export class Circle extends Graphics {
   public positionX?: number

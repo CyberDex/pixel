@@ -1,5 +1,5 @@
 import { Text, TextStyleOptions } from 'pixi.js'
-import { IComponent } from '../../interfaces'
+import { IComponent } from './IComponent'
 
 /**
  * Component for creation small text labels with [[View]] repositioning functionality

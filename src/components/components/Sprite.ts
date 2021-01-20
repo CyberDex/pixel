@@ -1,5 +1,5 @@
 import { Sprite as PixiSprite, Texture } from 'pixi.js'
-import { IComponent } from './IComponent'
+import { IComponent } from '../basic/IComponent'
 
 export class Sprite extends PixiSprite {
   public positionX?: number
