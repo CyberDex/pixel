@@ -268,29 +268,20 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Label<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, style<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TextStyleOptions</span>, positionX<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, positionY<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="label.html" class="tsd-signature-type">Label</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Label<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><a href="../interfaces/ilabel.html" class="tsd-signature-type">ILabel</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="label.html" class="tsd-signature-type">Label</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides Text.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/Label.ts#L10">src/components/Label.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/basic/Label.ts#L13">src/components/basic/Label.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>text: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> style: <span class="tsd-signature-type">TextStyleOptions</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> positionX: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 50</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> positionY: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 50</span></h5>
+									<h5>opts: <a href="../interfaces/ilabel.html" class="tsd-signature-type">ILabel</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="label.html" class="tsd-signature-type">Label</a></h4>
@@ -997,21 +988,21 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="positionx" class="tsd-anchor"></a>
-					<h3>positionX</h3>
-					<div class="tsd-signature tsd-kind-icon">positionX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> positionX</h3>
+					<div class="tsd-signature tsd-kind-icon">positionX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/Label.ts#L11">src/components/Label.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/basic/Label.ts#L12">src/components/basic/Label.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="positiony" class="tsd-anchor"></a>
-					<h3>positionY</h3>
-					<div class="tsd-signature tsd-kind-icon">positionY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> positionY</h3>
+					<div class="tsd-signature tsd-kind-icon">positionY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/Label.ts#L11">src/components/Label.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/basic/Label.ts#L13">src/components/basic/Label.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1616,7 +1607,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="label.html">Label</a>.<a href="label.html#_renderwebgl">_renderWebGL</a></p>
-								<p>Overrides <a href="view.html">View</a>.<a href="view.html#_renderwebgl">_renderWebGL</a></p>
+								<p>Overrides <a href="rect.html">Rect</a>.<a href="rect.html#_renderwebgl">_renderWebGL</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/pixi.js/index.d.ts:2328</li>
 								</ul>
@@ -2747,7 +2738,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="label.html">Label</a>.<a href="label.html#renderwebgl">renderWebGL</a></p>
-								<p>Overrides <a href="view.html">View</a>.<a href="view.html#renderwebgl">renderWebGL</a></p>
+								<p>Overrides <a href="sprite.html">Sprite</a>.<a href="sprite.html#renderwebgl">renderWebGL</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/pixi.js/index.d.ts:2590</li>
 								</ul>
@@ -3236,9 +3227,6 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum">
-						<a href="../enums/const.html" class="tsd-kind-icon">Const</a>
-					</li>
 					<li class=" tsd-kind-class">
 						<a href="animation.html" class="tsd-kind-icon">Animation</a>
 					</li>
@@ -3247,6 +3235,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="button.html" class="tsd-kind-icon">Button</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="circle.html" class="tsd-kind-icon">Circle</a>
 					</li>
 				</ul>
 				<ul class="current">
@@ -3687,6 +3678,9 @@
 						<a href="layoutmanager.html" class="tsd-kind-icon">Layout<wbr>Manager</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="rect.html" class="tsd-kind-icon">Rect</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="slider.html" class="tsd-kind-icon">Slider</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -3706,6 +3700,21 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/ibutton.html" class="tsd-kind-icon">IButton</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/icircle.html" class="tsd-kind-icon">ICircle</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/icomponent.html" class="tsd-kind-icon">IComponent</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/ilabel.html" class="tsd-kind-icon">ILabel</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/irect.html" class="tsd-kind-icon">IRect</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/isprite.html" class="tsd-kind-icon">ISprite</a>
 					</li>
 				</ul>
 			</nav>

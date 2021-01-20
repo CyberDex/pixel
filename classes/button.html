@@ -111,7 +111,6 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="button.html#_active" class="tsd-kind-icon">_active</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="button.html#_bounds" class="tsd-kind-icon">_bounds</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="button.html#_boundsid" class="tsd-kind-icon">_boundsID</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="button.html#_boundsrect" class="tsd-kind-icon">_bounds<wbr>Rect</a></li>
@@ -127,7 +126,6 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="button.html#accessiblehint" class="tsd-kind-icon">accessible<wbr>Hint</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="button.html#accessibletitle" class="tsd-kind-icon">accessible<wbr>Title</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="button.html#alpha" class="tsd-kind-icon">alpha</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="button.html#background" class="tsd-kind-icon">background</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="button.html#buttonmode" class="tsd-kind-icon">button<wbr>Mode</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="button.html#cacheasbitmap" class="tsd-kind-icon">cache<wbr>AsBitmap</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="button.html#cb" class="tsd-kind-icon">cb</a></li>
@@ -140,6 +138,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="button.html#hitarea" class="tsd-kind-icon">hit<wbr>Area</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="button.html#interactive" class="tsd-kind-icon">interactive</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="button.html#interactivechildren" class="tsd-kind-icon">interactive<wbr>Children</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="button.html#isactive" class="tsd-kind-icon">is<wbr>Active</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="button.html#localtransform" class="tsd-kind-icon">local<wbr>Transform</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="button.html#mask" class="tsd-kind-icon">mask</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="button.html#name" class="tsd-kind-icon">name</a></li>
@@ -192,6 +191,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="button.html#addchild" class="tsd-kind-icon">add<wbr>Child</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="button.html#addchildat" class="tsd-kind-icon">add<wbr>Child<wbr>At</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="button.html#addcircle" class="tsd-kind-icon">add<wbr>Circle</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="button.html#addimg" class="tsd-kind-icon">add<wbr>Img</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="button.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="button.html#addrect" class="tsd-kind-icon">add<wbr>Rect</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="button.html#addtext" class="tsd-kind-icon">add<wbr>Text</a></li>
@@ -251,7 +251,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="view.html">View</a>.<a href="view.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/ui/Button.ts#L37">src/components/ui/Button.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/ui/Button.ts#L15">src/components/ui/Button.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -267,16 +267,6 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_active" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _active</h3>
-					<div class="tsd-signature tsd-kind-icon">_active<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/ui/Button.ts#L37">src/components/ui/Button.ts:37</a></li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 					<a name="_bounds" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _bounds</h3>
@@ -442,16 +432,6 @@
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="background" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> background</h3>
-					<div class="tsd-signature tsd-kind-icon">background<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Graphics</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/ui/Button.ts#L34">src/components/ui/Button.ts:34</a></li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="buttonmode" class="tsd-anchor"></a>
 					<h3>button<wbr>Mode</h3>
@@ -490,7 +470,7 @@
 					<div class="tsd-signature tsd-kind-icon">cb<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/ui/Button.ts#L35">src/components/ui/Button.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/ui/Button.ts#L13">src/components/ui/Button.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -560,7 +540,7 @@
 					<h3>height</h3>
 					<div class="tsd-signature tsd-kind-icon">height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="view.html">View</a>.<a href="view.html#height">height</a></p>
+						<p>Inherited from <a href="rect.html">Rect</a>.<a href="rect.html#height">height</a></p>
 						<ul>
 							<li>Defined in node_modules/@types/pixi.js/index.d.ts:691</li>
 						</ul>
@@ -596,6 +576,16 @@
 						<p>Inherited from <a href="label.html">Label</a>.<a href="label.html#interactivechildren">interactiveChildren</a></p>
 						<ul>
 							<li>Defined in node_modules/@types/pixi.js/index.d.ts:847</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="isactive" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr>Active</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Active<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/ui/Button.ts#L15">src/components/ui/Button.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -704,23 +694,23 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="positionx" class="tsd-anchor"></a>
-					<h3>positionX</h3>
-					<div class="tsd-signature tsd-kind-icon">positionX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> positionX</h3>
+					<div class="tsd-signature tsd-kind-icon">positionX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="view.html">View</a>.<a href="view.html#positionx">positionX</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/View.ts#L14">src/components/View.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/View.ts#L10">src/components/View.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="positiony" class="tsd-anchor"></a>
-					<h3>positionY</h3>
-					<div class="tsd-signature tsd-kind-icon">positionY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> positionY</h3>
+					<div class="tsd-signature tsd-kind-icon">positionY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="view.html">View</a>.<a href="view.html#positiony">positionY</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/View.ts#L14">src/components/View.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/View.ts#L11">src/components/View.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -730,7 +720,7 @@
 					<div class="tsd-signature tsd-kind-icon">pressed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/ui/Button.ts#L36">src/components/ui/Button.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/ui/Button.ts#L14">src/components/ui/Button.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -835,7 +825,7 @@
 					<h3>width</h3>
 					<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="view.html">View</a>.<a href="view.html#width">width</a></p>
+						<p>Inherited from <a href="rect.html">Rect</a>.<a href="rect.html#width">width</a></p>
 						<ul>
 							<li>Defined in node_modules/@types/pixi.js/index.d.ts:690</li>
 						</ul>
@@ -955,7 +945,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/ui/Button.ts#L31">src/components/ui/Button.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/ui/Button.ts#L127">src/components/ui/Button.ts:127</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -973,7 +963,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/ui/Button.ts#L20">src/components/ui/Button.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/ui/Button.ts#L116">src/components/ui/Button.ts:116</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1254,7 +1244,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="view.html">View</a>.<a href="view.html#_renderwebgl">_renderWebGL</a></p>
+								<p>Inherited from <a href="rect.html">Rect</a>.<a href="rect.html#_renderwebgl">_renderWebGL</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/pixi.js/index.d.ts:764</li>
 								</ul>
@@ -1348,42 +1338,47 @@
 					<a name="addcircle" class="tsd-anchor"></a>
 					<h3>add<wbr>Circle</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Circle<span class="tsd-signature-symbol">(</span>positionX<span class="tsd-signature-symbol">?: </span><a href="../enums/const.html" class="tsd-signature-type">Const</a>, positionY<span class="tsd-signature-symbol">?: </span><a href="../enums/const.html" class="tsd-signature-type">Const</a>, radius<span class="tsd-signature-symbol">?: </span><a href="../enums/const.html" class="tsd-signature-type">Const</a>, color<span class="tsd-signature-symbol">?: </span><a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Graphics</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Circle<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><a href="../interfaces/icircle.html" class="tsd-signature-type">ICircle</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="circle.html" class="tsd-signature-type">Circle</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="view.html">View</a>.<a href="view.html#addcircle">addCircle</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/View.ts#L73">src/components/View.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/View.ts#L28">src/components/View.ts:28</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Add circle element to <a href="view.html">View</a></p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>View</p>
-									</dd>
-								</dl>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> positionX: <a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol"> = Const.positionX</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> positionY: <a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol"> = Const.positionY</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> radius: <a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol"> = Const.buttonHeight</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> color: <a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol"> = Const.defaultColor</span></h5>
+									<h5>opts: <a href="../interfaces/icircle.html" class="tsd-signature-type">ICircle</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Graphics</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="circle.html" class="tsd-signature-type">Circle</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="addimg" class="tsd-anchor"></a>
+					<h3>add<wbr>Img</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Img<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><a href="../interfaces/isprite.html" class="tsd-signature-type">ISprite</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="sprite.html" class="tsd-signature-type">Sprite</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="view.html">View</a>.<a href="view.html#addimg">addImg</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/View.ts#L32">src/components/View.ts:32</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>opts: <a href="../interfaces/isprite.html" class="tsd-signature-type">ISprite</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="sprite.html" class="tsd-signature-type">Sprite</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -1440,48 +1435,23 @@
 					<a name="addrect" class="tsd-anchor"></a>
 					<h3>add<wbr>Rect</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Rect<span class="tsd-signature-symbol">(</span>positionX<span class="tsd-signature-symbol">?: </span><a href="../enums/const.html" class="tsd-signature-type">Const</a>, positionY<span class="tsd-signature-symbol">?: </span><a href="../enums/const.html" class="tsd-signature-type">Const</a>, width<span class="tsd-signature-symbol">?: </span><a href="../enums/const.html" class="tsd-signature-type">Const</a>, height<span class="tsd-signature-symbol">?: </span><a href="../enums/const.html" class="tsd-signature-type">Const</a>, color<span class="tsd-signature-symbol">?: </span><a href="../enums/const.html" class="tsd-signature-type">Const</a>, round<span class="tsd-signature-symbol">?: </span><a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Graphics</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Rect<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><a href="../interfaces/irect.html" class="tsd-signature-type">IRect</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="rect.html" class="tsd-signature-type">Rect</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="view.html">View</a>.<a href="view.html#addrect">addRect</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/View.ts#L47">src/components/View.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/View.ts#L24">src/components/View.ts:24</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Add rounded rect element to <a href="view.html">View</a></p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>View</p>
-									</dd>
-								</dl>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> positionX: <a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol"> = Const.positionX</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> positionY: <a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol"> = Const.positionY</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> width: <a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol"> = Const.buttonWidth</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> height: <a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol"> = Const.buttonHeight</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> color: <a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol"> = Const.defaultColor</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> round: <a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol"> = Const.buttonRound</span></h5>
+									<h5>opts: <a href="../interfaces/irect.html" class="tsd-signature-type">IRect</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Graphics</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="rect.html" class="tsd-signature-type">Rect</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -1489,39 +1459,20 @@
 					<a name="addtext" class="tsd-anchor"></a>
 					<h3>add<wbr>Text</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Text<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, style<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TextStyle</span>, positionX<span class="tsd-signature-symbol">?: </span><a href="../enums/const.html" class="tsd-signature-type">Const</a>, positionY<span class="tsd-signature-symbol">?: </span><a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="label.html" class="tsd-signature-type">Label</a></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Text<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><a href="../interfaces/ilabel.html" class="tsd-signature-type">ILabel</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="label.html" class="tsd-signature-type">Label</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="view.html">View</a>.<a href="view.html#addtext">addText</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/View.ts#L29">src/components/View.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/View.ts#L20">src/components/View.ts:20</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Add <a href="label.html">Label</a> component to <a href="view.html">View</a></p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>View</p>
-									</dd>
-								</dl>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> text: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> style: <span class="tsd-signature-type">TextStyle</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> positionX: <a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol"> = Const.positionX</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> positionY: <a href="../enums/const.html" class="tsd-signature-type">Const</a><span class="tsd-signature-symbol"> = Const.positionY</span></h5>
+									<h5>opts: <a href="../interfaces/ilabel.html" class="tsd-signature-type">ILabel</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="label.html" class="tsd-signature-type">Label</a></h4>
@@ -1882,7 +1833,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="view.html">View</a>.<a href="view.html#getlocalbounds">getLocalBounds</a></p>
+								<p>Inherited from <a href="rect.html">Rect</a>.<a href="rect.html#getlocalbounds">getLocalBounds</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/pixi.js/index.d.ts:914</li>
 								</ul>
@@ -2007,7 +1958,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/ui/Button.ts#L89">src/components/ui/Button.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/ui/Button.ts#L67">src/components/ui/Button.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2130,7 +2081,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/ui/Button.ts#L78">src/components/ui/Button.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/ui/Button.ts#L56">src/components/ui/Button.ts:56</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2175,12 +2126,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/ui/Button.ts#L99">src/components/ui/Button.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/ui/Button.ts#L77">src/components/ui/Button.ts:77</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>&#39;Pointerdown&#39; handler</p>
+									<p>&#39;Pointer down&#39; handler</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>memberof</dt>
@@ -2202,12 +2153,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/ui/Button.ts#L128">src/components/ui/Button.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/ui/Button.ts#L106">src/components/ui/Button.ts:106</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>&#39;Pointerupoutside&#39; handler</p>
+									<p>&#39;Pointer up outside&#39; handler</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>memberof</dt>
@@ -2230,21 +2181,9 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="view.html">View</a>.<a href="view.html#onresize">onResize</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/View.ts#L99">src/components/View.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/View.ts#L36">src/components/View.ts:36</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Canvas resize handler. It will reposition all elements on View depending on their <a href="button.html#positionx">positionX</a> and <a href="button.html#positiony">positionY</a> values.</p>
-								</div>
-								<p><a href="button.html#positionx">positionX</a> - is position in % of canvas width</p>
-								<p><a href="button.html#positiony">positionY</a> - is position in % of canvas height</p>
-								<dl class="tsd-comment-tags">
-									<dt>memberof</dt>
-									<dd><p>View</p>
-									</dd>
-								</dl>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -2268,12 +2207,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/12094ce/src/components/ui/Button.ts#L113">src/components/ui/Button.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/CyberDex/pixil/blob/1d5dc7f/src/components/ui/Button.ts#L91">src/components/ui/Button.ts:91</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>&#39;Pointerup&#39; handler</p>
+									<p>&#39;Pointer up&#39; handler</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>memberof</dt>
@@ -2597,7 +2536,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="view.html">View</a>.<a href="view.html#renderwebgl">renderWebGL</a></p>
+								<p>Inherited from <a href="sprite.html">Sprite</a>.<a href="sprite.html#renderwebgl">renderWebGL</a></p>
 								<p>Overrides DisplayObject.renderWebGL</p>
 								<ul>
 									<li>Defined in node_modules/@types/pixi.js/index.d.ts:762</li>
@@ -2967,9 +2906,6 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum">
-						<a href="../enums/const.html" class="tsd-kind-icon">Const</a>
-					</li>
 					<li class=" tsd-kind-class">
 						<a href="animation.html" class="tsd-kind-icon">Animation</a>
 					</li>
@@ -2983,9 +2919,6 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="button.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="button.html#_active" class="tsd-kind-icon">_active</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="button.html#_bounds" class="tsd-kind-icon">_bounds</a>
@@ -3032,9 +2965,6 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="button.html#alpha" class="tsd-kind-icon">alpha</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="button.html#background" class="tsd-kind-icon">background</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="button.html#buttonmode" class="tsd-kind-icon">button<wbr>Mode</a>
 							</li>
@@ -3070,6 +3000,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="button.html#interactivechildren" class="tsd-kind-icon">interactive<wbr>Children</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="button.html#isactive" class="tsd-kind-icon">is<wbr>Active</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="button.html#localtransform" class="tsd-kind-icon">local<wbr>Transform</a>
@@ -3196,6 +3129,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="button.html#addcircle" class="tsd-kind-icon">add<wbr>Circle</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="button.html#addimg" class="tsd-kind-icon">add<wbr>Img</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="button.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a>
@@ -3325,10 +3261,16 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-class">
+						<a href="circle.html" class="tsd-kind-icon">Circle</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="label.html" class="tsd-kind-icon">Label</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="layoutmanager.html" class="tsd-kind-icon">Layout<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="rect.html" class="tsd-kind-icon">Rect</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="slider.html" class="tsd-kind-icon">Slider</a>
@@ -3350,6 +3292,21 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/ibutton.html" class="tsd-kind-icon">IButton</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/icircle.html" class="tsd-kind-icon">ICircle</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/icomponent.html" class="tsd-kind-icon">IComponent</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/ilabel.html" class="tsd-kind-icon">ILabel</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/irect.html" class="tsd-kind-icon">IRect</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/isprite.html" class="tsd-kind-icon">ISprite</a>
 					</li>
 				</ul>
 			</nav>
