@@ -1,4 +1,4 @@
-import { TextStyle } from 'pixi.js'
+import { TextStyleOptions } from 'pixi.js'
 
 export interface IButton {
 	/**
@@ -63,5 +63,13 @@ export interface IButton {
 	 * @type {*}
 	 * @memberof IButton
 	 */
-	style?: TextStyle
+	style?: TextStyleOptions
+
+	/**
+	 * On click callback
+	 *
+	 * @type {void}
+	 * @memberof IButton
+	 */
+	onClick?: () => void
 }

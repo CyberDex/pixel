@@ -36,7 +36,7 @@ export class Button extends View {
 	private pressed = false
 	private _active = true
 
-	public constructor(private readonly props: IButton = {}) {
+	public constructor(props: IButton) {
 		super()
 
 		props.width = props.width || 200
@@ -56,6 +56,8 @@ export class Button extends View {
 		this.addChild(this.background)
 		this.background.x = -props.width / 2
 		this.background.y = -props.height / 2
+
+		if (props.onClick) this.onClick(props.onClick)
 
 		this.addChild(new Label(props.text || '', props.style || ({ fill: '#ffffff' } as TextStyle), 0, 0))
 
