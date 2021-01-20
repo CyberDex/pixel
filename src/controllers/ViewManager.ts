@@ -1,5 +1,5 @@
 import { View } from '../components/View'
-import { App } from '../App'
+import { Game } from '../Game'
 
 /**
  * Manager for [[add]], [[show]] / [[hide]] [[View]] instances
@@ -12,7 +12,7 @@ export class ViewManager {
 		[key: string]: View
 	} = {}
 
-	public constructor(public app: App) {}
+	public constructor(public game: Game) { }
 
 	/**
 	 * Add instance of [[View]] to [[ViewManager]] register
@@ -24,7 +24,7 @@ export class ViewManager {
 	 */
 	public add(sceneName: string, sceneInst: View) {
 		this.scenes[sceneName] = sceneInst
-		this.app.stage.addChild(sceneInst)
+		this.game.stage.addChild(sceneInst)
 		if (Object.keys(this.scenes).length > 1) {
 			this.hide(sceneName)
 		}
