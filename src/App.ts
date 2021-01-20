@@ -1,30 +1,14 @@
-import { Application } from 'pixi.js'
+import { Application, ApplicationOptions } from 'pixi.js'
 import { LayoutManager } from './controllers/LayoutManager'
 import { ViewManager } from './controllers/ViewManager'
 
-/**
- * Convenience class to create a new PIXI application.
- *
- * This class automatically creates the renderer, ticker and root container.
- *
- * Additional functionality from Pixil is resize [[renderer]] with [[LayoutManager]]
- *
- * Also [[ViewManager]] instance will be created and will be available for use with 'App.scenes' construction
- *
- * App.views holds an instance of [[ViewManager]]
- *
- * App.layout holds an instance of [[LayoutManager]]
- *
- * @export
- * @class App
- * @extends {Application}
- */
 export class App extends Application {
 	public views: ViewManager
 	public layout: LayoutManager
+	private static inst: App
 
-	public constructor(options?: object) {
-		super(options)
+	public constructor(opts?: ApplicationOptions) {
+		super(opts)
 		this.views = new ViewManager(this)
 		this.layout = LayoutManager.instance
 		this.layout.onResize((w, h) => this.renderer.resize(w, h))
@@ -45,9 +29,22 @@ export class App extends Application {
 		})
 	}
 
-
+	/**
+	 * Load and parse JSON
+	 *
+	 * @param {string} config
+	 * @returns {Promise<Object>}
+	 * @memberof App
+	 */
 	public async loadConfig(config: string): Promise<Object> {
 		const response = await fetch(config)
 		return response.json()
+	}
+
+	public static getInstance(opts?: ApplicationOptions): App {
+		if (!App.inst) {
+			App.inst = new App(opts)
+		}
+		return App.inst
 	}
 }

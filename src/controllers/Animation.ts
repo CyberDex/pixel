@@ -1,5 +1,4 @@
 import { DisplayObject } from 'pixi.js'
-import { IAnimation } from '../helpers/interfaces/IAnimation'
 
 /**
  * Animate [[DisplayObject]] class
@@ -10,7 +9,7 @@ import { IAnimation } from '../helpers/interfaces/IAnimation'
 export class Animation {
 	private _isPlaying = false
 
-	public constructor(private readonly element: DisplayObject, private readonly props: IAnimation) {}
+	public constructor(private readonly element: DisplayObject, private readonly props: IAnimation) { }
 
 	/**
 	 * Start playing animation
@@ -60,4 +59,19 @@ export class Animation {
 	public get isPlaying() {
 		return this._isPlaying
 	}
+}
+
+export interface IAnimation {
+	delay: number
+	animate?: IAnimate
+	loop?: boolean
+}
+
+export interface IAnimate {
+	x?: number
+	y?: number
+	width?: number
+	height?: number
+	rotation?: number
+	scale?: number
 }

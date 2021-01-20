@@ -1,8 +1,6 @@
 import { View } from '../View'
-import { Graphics, TextStyle } from 'pixi.js'
-import { Label } from '../..'
-import { Const } from '../../helpers/const'
-import { IButton } from '../../helpers/interfaces/IButton'
+import { TextStyleOptions } from 'pixi.js'
+import { IRect } from '../basic/Rect'
 
 /**
  * Class for buttons creation with [[View]] repositioning functionality
@@ -12,60 +10,40 @@ import { IButton } from '../../helpers/interfaces/IButton'
  * @extends {View}
  */
 export class Button extends View {
-	/**
-	 * Activate button (make it clickable)
-	 *
-	 * @memberof Button
-	 */
-	public set active(active: boolean) {
-		this.alpha = active ? 1 : 0.5
-		this.buttonMode = active
-		this._active = active
-	}
-
-	/**
-	 * Get activation button status
-	 *
-	 * @memberof Button
-	 */
-	public get active() {
-		return this._active
-	}
-	private readonly background: Graphics
 	private readonly cb: (() => void)[] = []
 	private pressed = false
-	private _active = true
+	private isActive = true
 
 	public constructor(props: IButton) {
-		super()
+		super(props.positionX, props.positionY)
 
-		props.width = props.width || 200
-		props.height = props.height || 30
+		this.width = props.width
+		this.height = props.height
 
-		this.positionX = props.positionX || 50
-		this.positionY = props.positionY || 50
+		this.addRect({
+			color: props.color,
+			round: props.round,
+			width: props.width,
+			height: props.height
+		})
 
-		this.background = this.addRect(
-			0,
-			0,
-			props.width,
-			props.height,
-			Number(props.color || Const.defaultColor),
-			props.radius || 0,
-		)
-		this.addChild(this.background)
-		this.background.x = -props.width / 2
-		this.background.y = -props.height / 2
-
-		if (props.onClick) this.onClick(props.onClick)
-
-		this.addChild(new Label(props.text || '', props.style || ({ fill: '#ffffff' } as TextStyle), 0, 0))
+		this.addText({
+			text: props.text,
+			style: props.style,
+			positionX: 50,
+			positionY: 50,
+		})
 
 		this.interactive = true
 		this.buttonMode = true
+
+		if (props.onClick) {
+			this.onClick(props.onClick)
+		}
+
 		this.on('pointerdown', () => this.onDown())
-			.on('pointerup', () => this.onUp())
-			.on('pointerupoutside', () => this.onMouseOut())
+		this.on('pointerup', () => this.onUp())
+		this.on('pointerupoutside', () => this.onMouseOut())
 	}
 
 	/**
@@ -91,13 +69,13 @@ export class Button extends View {
 	}
 
 	/**
-	 * 'Pointerdown' handler
+	 * 'Pointer down' handler
 	 *
 	 * @private
 	 * @memberof Button
 	 */
 	private onDown() {
-		if (!this._active) {
+		if (!this.isActive) {
 			return
 		}
 		this.pressed = true
@@ -105,7 +83,7 @@ export class Button extends View {
 	}
 
 	/**
-	 * 'Pointerup' handler
+	 * 'Pointer up' handler
 	 *
 	 * @private
 	 * @memberof Button
@@ -120,7 +98,7 @@ export class Button extends View {
 	}
 
 	/**
-	 * 'Pointerupoutside' handler
+	 * 'Pointer up outside' handler
 	 *
 	 * @private
 	 * @memberof Button
@@ -129,4 +107,30 @@ export class Button extends View {
 		this.scale.set(1)
 		this.pressed = false
 	}
+
+	/**
+	 * Activate button (make it clickable)
+	 *
+	 * @memberof Button
+	 */
+	public set active(active: boolean) {
+		this.alpha = active ? 1 : 0.5
+		this.buttonMode = active
+		this.isActive = active
+	}
+
+	/**
+	 * Get activation button status
+	 *
+	 * @memberof Button
+	 */
+	public get active() {
+		return this.isActive
+	}
+}
+
+export interface IButton extends IRect {
+	text?: string
+	style?: TextStyleOptions
+	onClick?: () => void
 }

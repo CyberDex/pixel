@@ -11,6 +11,5 @@ describe('App module', () => {
 		expect(app).toBeDefined()
 		expect(app).toBeInstanceOf(Application)
 		expect(app.views).toBeInstanceOf(ViewManager)
-		expect(app.views).toBeInstanceOf(ViewManager)
 	})
 })
