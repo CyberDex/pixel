@@ -1,6 +1,6 @@
-import { View } from '../View'
+import { View } from './View'
 import { TextStyleOptions } from 'pixi.js'
-import { IRect } from '../basic/Rect'
+import { IRect } from './Rect'
 
 /**
  * Class for buttons creation with [[View]] repositioning functionality

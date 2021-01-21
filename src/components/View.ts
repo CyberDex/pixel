@@ -1,10 +1,9 @@
-import { Container } from 'pixi.js'
+import { Container, DisplayObject } from 'pixi.js'
 import { LayoutManager } from '../controllers/LayoutManager'
-import { ISprite, Sprite } from './basic/Sprite'
-import { IRect, Rect } from './basic/Rect'
-import { Circle, ICircle } from './basic/Circle'
-import { ILabel, Label } from './basic/Label'
-
+import { ISprite, Sprite } from './Sprite'
+import { IRect, Rect } from './Rect'
+import { Circle, ICircle } from './Circle'
+import { ILabel, Label } from './Label'
 export class View extends Container {
 	public constructor(
 		public positionX?: number,
@@ -14,32 +13,41 @@ export class View extends Container {
 
 		LayoutManager
 			.instance
-			.onResize((w, h) => this.onResize(w, h))
+			.onResize(() => this.onResize())
 	}
 
 	public addText(opts: ILabel): Label {
-		return this.addChild(new Label(opts))
+		return this.add(new Label(opts))
 	}
 
 	public addRect(opts: IRect): Rect {
-		return this.addChild(new Rect(opts))
+		return this.add(new Rect(opts))
 	}
 
 	public addCircle(opts: ICircle): Circle {
-		return this.addChild(new Circle(opts))
+		return this.add(new Circle(opts))
 	}
 
 	public addImg(opts: ISprite): Sprite {
-		return this.addChild(new Sprite(opts))
+		return this.add(new Sprite(opts))
 	}
 
-	public onResize(canvasWidth: number, canvasHeight: number) {
+	private add(child) {
+		const element = this.addChild(child)
+		this.onResize()
+		return element
+	}
+
+	private onResize() {
+		const w = LayoutManager.instance.width
+		const h = LayoutManager.instance.height
+
 		this.children.forEach((element: any) => {
 			if (element.positionX) {
-				element.x = (canvasWidth / 100) * element.positionX
+				element.x = (w / 100) * element.positionX
 			}
 			if (element.positionY) {
-				element.y = (canvasHeight / 100) * element.positionY
+				element.y = (h / 100) * element.positionY
 			}
 		})
 	}

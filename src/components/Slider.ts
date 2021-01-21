@@ -1,4 +1,4 @@
-import { View } from '../View'
+import { View } from './View'
 import { Graphics } from 'pixi.js'
 
 export class Slider extends View {
