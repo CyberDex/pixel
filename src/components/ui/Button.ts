@@ -20,18 +20,18 @@ export class Button extends View {
 		this.width = props.width
 		this.height = props.height
 
-		this.addRect({
+		const bg = this.addRect({
 			color: props.color,
 			round: props.round,
 			width: props.width,
 			height: props.height
 		})
+		bg.x -= this.width / 2
+		bg.y -= this.height / 2
 
 		this.addText({
 			text: props.text,
 			style: props.style,
-			positionX: 50,
-			positionY: 50,
 		})
 
 		this.interactive = true
