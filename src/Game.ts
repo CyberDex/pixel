@@ -1,5 +1,4 @@
 import { Application, ApplicationOptions } from 'pixi.js'
-import { LayoutManager } from './controllers/LayoutManager'
 import { ViewManager } from './controllers/ViewManager'
 
 export class Game extends Application {
@@ -10,21 +9,21 @@ export class Game extends Application {
 			: Game.instance = new Game(opts)
 	}
 
-	public views: ViewManager
-	public layout: LayoutManager
+	public scenes: ViewManager
 
 	public constructor(opts?: ApplicationOptions) {
 		super(opts)
-
-		this.views = new ViewManager(this)
-
-		this.layout = LayoutManager.instance
-		this.layout.onResize((w, h) => this.renderer.resize(w, h))
-
-		document.body.appendChild(this.view)
+		this.scenes = new ViewManager(this)
+		this.init()
 	}
 
-	public async init() { }
+	public async init() {
+		document.addEventListener('DOMContentLoaded', () => {
+			document.body.appendChild(this.view)
+			window.addEventListener('resize', () => this.resize())
+			this.resize()
+		})
+	}
 
 	public async loadAssets(assets: string[]) {
 		for (const asset of assets) {
@@ -44,5 +43,9 @@ export class Game extends Application {
 	public async loadJSON(config: string): Promise<Object> {
 		const response = await fetch(config)
 		return response.json()
+	}
+
+	private resize() {
+		this.renderer.resize(window.innerWidth, window.innerHeight)
 	}
 }
