@@ -5,10 +5,7 @@ import { IRect, Rect } from './Rect'
 import { Circle, ICircle } from './Circle'
 import { ILabel, Label } from './Label'
 export class View extends Container {
-	public constructor(
-		public positionX?: number,
-		public positionY?: number,
-	) {
+	public constructor() {
 		super()
 
 		LayoutManager

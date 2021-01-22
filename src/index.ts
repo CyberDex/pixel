@@ -1,3 +1,6 @@
-import { Game } from './Game'
+import { Game as PixilGame } from './Game'
 import { Scene } from './components/Scene'
-export { Game, Scene }
+
+export const GAME = PixilGame.getInstance()
+
+export { Scene }
