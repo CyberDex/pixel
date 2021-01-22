@@ -10,6 +10,6 @@ export class Scene extends View {
 	}
 
 	public addButton(opts: IButton): Button {
-		return this.addChild(new Button(opts))
+		return this.add(new Button(opts))
 	}
 }

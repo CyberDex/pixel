@@ -7,8 +7,15 @@ export class Sprite extends PixiSprite {
 
   constructor(opts: ISprite) {
     super(Texture.fromImage(opts.texture))
-    opts.anchor &&
+
+    if (opts.anchor)
       this.anchor.set(opts.anchor)
+
+    if (opts.width)
+      this.width = opts.width
+
+    if (opts.height)
+      this.height = opts.height
 
     this.positionX = opts.positionX
     this.positionY = opts.positionY
@@ -18,4 +25,6 @@ export class Sprite extends PixiSprite {
 export interface ISprite extends IComponent {
   texture: string,
   anchor?: number,
+  width?: number,
+  height?: number,
 }

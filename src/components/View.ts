@@ -32,7 +32,7 @@ export class View extends Container {
 		return this.add(new Sprite(opts))
 	}
 
-	private add(child) {
+	public add(child) {
 		const element = this.addChild(child)
 		this.onResize()
 		return element
