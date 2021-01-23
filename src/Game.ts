@@ -1,5 +1,5 @@
 import { Application, ApplicationOptions } from 'pixi.js'
-import { ViewManager } from './controllers/ViewManager'
+import { Scene } from './components/Scene'
 
 export class Game extends Application {
 	private static instance: Game
@@ -8,12 +8,28 @@ export class Game extends Application {
 			? Game.instance
 			: Game.instance = new Game(opts)
 	}
+	public scenes: {
+		[key: string]: Scene
+	} = {}
 
-	public scenes: ViewManager
+	public addScene(
+		name: string = String(this.scenes.length),
+		scene: Scene = new Scene()
+	): Scene {
+		this.scenes[name] = scene
+		this.stage.addChild(scene)
+		return scene
+	}
+
+	public showScene(scene: string) {
+		for (const scene in this.scenes) {
+			this.scenes[scene].visible = false
+		}
+		this.scenes[scene].visible = true
+	}
 
 	public constructor(opts?: ApplicationOptions) {
 		super(opts)
-		this.scenes = new ViewManager(this)
 		this.init()
 	}
 
@@ -23,26 +39,6 @@ export class Game extends Application {
 			window.addEventListener('resize', () => this.resize())
 			this.resize()
 		})
-	}
-
-	public async loadAssets(assets: string[]) {
-		for (const asset of assets) {
-			await this.loadAsset(asset)
-		}
-	}
-
-	public loadAsset(url): Promise<void> {
-		const loader = new PIXI.loaders.Loader()
-		return new Promise(resolve => {
-			loader
-				.add(url)
-				.load(resolve)
-		})
-	}
-
-	public async loadJSON(config: string): Promise<Object> {
-		const response = await fetch(config)
-		return response.json()
 	}
 
 	private resize() {

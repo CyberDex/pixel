@@ -1,10 +1,7 @@
 import { Graphics } from 'pixi.js'
-import { IComponent } from './IComponent'
+import { IComponent } from '.'
 
 export class Rect extends Graphics {
-  public positionX?: number
-  public positionY?: number
-
   constructor(opts: IRect) {
     super()
     this.beginFill(opts.color)
@@ -15,10 +12,9 @@ export class Rect extends Graphics {
       opts.height,
       opts.round || 0)
     this.endFill()
-
-    this.positionX = opts.positionX
-    this.positionY = opts.positionY
   }
+
+  public resize() { }
 }
 
 export interface IRect extends IComponent {
