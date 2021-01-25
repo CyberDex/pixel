@@ -1,44 +1,71 @@
-import { Container } from 'pixi.js'
-import { ISprite, Sprite } from './Sprite'
-import { IRect, Rect } from './Rect'
-import { Circle, ICircle } from './Circle'
-import { ILabel, Label } from './Label'
-import { TElement } from '.'
+import { Sprite, Texture } from 'pixi.js'
+import { getPropertyVal } from '../utils'
+import { IComponent, TElement } from './types'
 
-export class View extends Container {
+export class View extends Sprite {
 	public elements: TElement[] = []
 
-	constructor() {
-		super()
-
+	constructor(private props?: IView) {
+		super(props?.bg ? Texture.fromImage(props.bg) : undefined)
 		window.addEventListener('resize', () => this.resize())
-		this.resize()
 	}
 
-	public addText(opts: ILabel): Label {
-		return this.add(new Label(opts))
-	}
-
-	public addRect(opts: IRect): Rect {
-		return this.add(new Rect(opts))
-	}
-
-	public addCircle(opts: ICircle): Circle {
-		return this.add(new Circle(opts))
-	}
-
-	public addImg(opts: ISprite): Sprite {
-		return this.add(new Sprite(opts))
-	}
-
-	public add(element) {
+	public add(element: TElement) {
 		this.elements.push(element)
+		element.resize()
 		return this.addChild(element)
 	}
 
 	public resize() {
+		const w = window.innerWidth
+		const h = window.innerHeight
+		if (this.props?.x)
+			this.x = getPropertyVal(this.props.x, w)
+
+		if (this.props?.y)
+			this.y = getPropertyVal(this.props.y, h)
+
+		if (this.props?.w) {
+			const startW = this.width
+			this.width = getPropertyVal(this.props.w, w)
+			if (!this.props?.h) {
+				this.height *= this.width / startW
+			}
+		}
+
+		if (this.props?.h) {
+			const startH = this.height
+			this.height = getPropertyVal(this.props.h, h)
+			if (!this.props.w) {
+				this.width *= this.height / startH
+			}
+		}
+
+		this.updateAnchor(w, h)
+
+		this.resizeElements()
+	}
+
+	private updateAnchor(w, h: number) {
+		let anchorX = .5
+		let anchorY = .5
+
+		if (this.x === 0) anchorX = 0
+		if (this.x === w) anchorX = 1
+
+		if (this.y === 0) anchorY = 0
+		if (this.y === h) anchorY = 1
+
+		this.anchor.set(anchorX, anchorY)
+	}
+
+	public resizeElements() {
 		this.elements.forEach((element: TElement) =>
 			element.resize(window.innerWidth, window.innerHeight)
 		)
 	}
+}
+
+export interface IView extends IComponent {
+	bg: string,
 }

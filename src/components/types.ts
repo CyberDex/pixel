@@ -1,9 +1,7 @@
-import { Button } from "./Button";
-import { Circle } from "./Circle";
-import { Label } from "./Label";
-import { Rect } from "./Rect";
-import { Sprite } from "./Sprite";
-import { View } from "./View";
+import { Button } from "./Button"
+import { Text } from "./basic/Text"
+import { Sprite } from "./Sprite"
+import { View } from "./View"
 
 export interface IComponent {
   x?: number | string | THorSide,
@@ -22,8 +20,6 @@ export type THorSide =
 
 export type TElement =
   | Button
-  | Circle
-  | Label
-  | Rect
+  | Text
   | Sprite
   | View

@@ -10,8 +10,6 @@ export class Slider extends View {
   // 	private readonly cb: ((data: number) => void)[] = []
 
   public constructor(
-    public positionX,
-    public positionY,
     // 		private readonly w = 200,
     // 		private readonly h = 30,
     // 		private readonly min = 0,
@@ -19,7 +17,7 @@ export class Slider extends View {
     // 		private readonly bgColor = 0xffffff,
     // 		private readonly fgColor = 0xde3249,
   ) {
-    super(positionX, positionY)
+    super()
     // 		this.width = w
     // 		this.height = h
     // 		this._value = min

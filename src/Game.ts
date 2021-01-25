@@ -3,33 +3,17 @@ import { Scene } from './components/Scene'
 
 export class Game extends Application {
 	private static instance: Game
-	public static getInstance(opts?: ApplicationOptions): Game {
+	public static getInstance(props?: ApplicationOptions): Game {
 		return Game.instance
 			? Game.instance
-			: Game.instance = new Game(opts)
+			: Game.instance = new Game(props)
 	}
 	public scenes: {
 		[key: string]: Scene
 	} = {}
 
-	public addScene(
-		name: string = String(this.scenes.length),
-		scene: Scene = new Scene()
-	): Scene {
-		this.scenes[name] = scene
-		this.stage.addChild(scene)
-		return scene
-	}
-
-	public showScene(scene: string) {
-		for (const scene in this.scenes) {
-			this.scenes[scene].visible = false
-		}
-		this.scenes[scene].visible = true
-	}
-
-	public constructor(opts?: ApplicationOptions) {
-		super(opts)
+	public constructor(props?: ApplicationOptions) {
+		super(props)
 		this.init()
 	}
 
@@ -39,6 +23,18 @@ export class Game extends Application {
 			window.addEventListener('resize', () => this.resize())
 			this.resize()
 		})
+	}
+
+	public async addScene(
+		name: string = String(this.scenes.length),
+		assets?: string[],
+		scene: Scene = new Scene()
+	): Promise<Scene> {
+		await scene.loadAssets(assets)
+		this.scenes[name] = scene
+		this.stage.addChild(scene)
+		scene.resize()
+		return scene
 	}
 
 	private resize() {
