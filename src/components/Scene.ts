@@ -1,13 +1,15 @@
 import { IView, View } from './View'
 import { Button, IButton } from './Button'
-import { IText, Text } from './Text'
+import { loader } from 'pixi.js'
 
 export class Scene extends View {
-	public constructor() {
-		super()
+	public constructor(public props: IScene = {}) {
+		super(props)
 	}
 
-	public async init() { }
+	public async preload(assets?: string[]) {
+		await this.loadAssets(assets)
+	}
 
 	public addButton(
 		props: IButton,
@@ -15,22 +17,6 @@ export class Scene extends View {
 	): Button {
 		this.add(button)
 		return button
-	}
-
-	public addText(
-		props: IText,
-		text = new Text(props)
-	): Text {
-		this.add(new Text(props))
-		return text
-	}
-
-	public addImg(
-		props: IView,
-		img = new View(props)
-	): View {
-		this.add(new View(props))
-		return img
 	}
 
 	public async loadAssets(assets?: string[]) {
@@ -41,8 +27,7 @@ export class Scene extends View {
 	}
 
 	public loadAsset(url): Promise<void> {
-		const loader = new PIXI.loaders.Loader()
-		return new Promise(resolve => {
+		return new Promise((resolve, reject) => {
 			loader
 				.add(url)
 				.load(resolve)
@@ -53,4 +38,7 @@ export class Scene extends View {
 		const response = await fetch(config)
 		return response.json()
 	}
+}
+
+export interface IScene extends IView {
 }

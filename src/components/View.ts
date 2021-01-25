@@ -1,19 +1,36 @@
 import { Sprite, Texture } from 'pixi.js'
 import { getPropertyVal } from '../utils'
 import { IComponent, TElement } from './types'
+import { IText, Text } from './Text'
 
 export class View extends Sprite {
 	public elements: TElement[] = []
 
-	constructor(private props?: IView) {
+	constructor(public props?: IView) {
 		super(props?.bg ? Texture.fromImage(props.bg) : undefined)
-		window.addEventListener('resize', () => this.resize())
+	}
+
+	public addText(
+		props: IText,
+		text = new Text(props)
+	): Text {
+		this.add(new Text(props))
+		return text
+	}
+
+	public addImg(
+		props: IView,
+		img = new View(props)
+	): View {
+		this.add(new View(props))
+		return img
 	}
 
 	public add(element: TElement): TElement {
 		this.elements.push(element)
+		this.addChild(element)
 		element.resize()
-		return this.addChild(element)
+		return element
 	}
 
 	public resize() {
@@ -68,5 +85,5 @@ export class View extends Sprite {
 }
 
 export interface IView extends IComponent {
-	bg: string,
+	bg?: string,
 }

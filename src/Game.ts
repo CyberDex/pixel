@@ -1,5 +1,5 @@
 import { Application, ApplicationOptions } from 'pixi.js'
-import { Scene } from './components/Scene'
+import { IScene, Scene } from './components/Scene'
 
 export class Game extends Application {
 	private static instance: Game
@@ -14,10 +14,7 @@ export class Game extends Application {
 
 	public constructor(props?: ApplicationOptions) {
 		super(props)
-		this.init()
-	}
 
-	public async init() {
 		document.addEventListener('DOMContentLoaded', () => {
 			document.body.appendChild(this.view)
 			window.addEventListener('resize', () => this.resize())
@@ -25,12 +22,11 @@ export class Game extends Application {
 		})
 	}
 
-	public async addScene(
+	public addScene(
 		name: string = String(this.scenes.length),
-		assets?: string[],
-		scene: Scene = new Scene()
-	): Promise<Scene> {
-		await scene.loadAssets(assets)
+		props?: IScene,
+		scene: Scene = new Scene(props)
+	): Scene {
 		this.scenes[name] = scene
 		this.stage.addChild(scene)
 		scene.resize()
@@ -39,5 +35,6 @@ export class Game extends Application {
 
 	private resize() {
 		this.renderer.resize(window.innerWidth, window.innerHeight)
+		for (const scene in this.scenes) this.scenes[scene].resize()
 	}
 }
