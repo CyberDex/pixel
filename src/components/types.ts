@@ -1,6 +1,5 @@
 import { Button } from "./Button"
-import { Text } from "./basic/Text"
-import { Sprite } from "./Sprite"
+import { Text } from "./Text"
 import { View } from "./View"
 
 export interface IComponent {
@@ -21,5 +20,4 @@ export type THorSide =
 export type TElement =
   | Button
   | Text
-  | Sprite
   | View

@@ -1,5 +1,5 @@
 import { Text as PixiText, TextStyleOptions } from 'pixi.js'
-import { IComponent } from '../types'
+import { IComponent } from './types'
 
 export class Text extends PixiText {
 	public constructor(props: IText) {

@@ -1,25 +1,36 @@
 import { IView, View } from './View'
 import { Button, IButton } from './Button'
-import { IText, Text } from './basic/Text'
+import { IText, Text } from './Text'
 
 export class Scene extends View {
 	public constructor() {
 		super()
-		this.init()
 	}
 
 	public async init() { }
 
-	public addButton(props: IButton): Button {
-		return this.add(new Button(props))
+	public addButton(
+		props: IButton,
+		button = new Button(props)
+	): Button {
+		this.add(button)
+		return button
 	}
 
-	public addText(props: IText): Text {
-		return this.add(new Text(props))
+	public addText(
+		props: IText,
+		text = new Text(props)
+	): Text {
+		this.add(new Text(props))
+		return text
 	}
 
-	public addImg(props: IView): View {
-		return this.add(new View(props))
+	public addImg(
+		props: IView,
+		img = new View(props)
+	): View {
+		this.add(new View(props))
+		return img
 	}
 
 	public async loadAssets(assets?: string[]) {
