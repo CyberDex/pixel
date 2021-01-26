@@ -59,7 +59,7 @@ export class View extends Sprite {
 				this.height *= this.width / startW
 				if (this.props.maxH && this.height > this.props.maxH) {
 					const startH = this.height
-					this.height = this.props.maxH
+					this.height = getPropertyVal(this.props.maxH, window.innerHeight)
 					this.width *= this.height / startH
 				}
 			}
@@ -75,7 +75,7 @@ export class View extends Sprite {
 				this.width *= this.height / startH
 				if (this.props.maxW && this.width > this.props.maxW) {
 					const startW = this.width
-					this.width = this.props.maxW
+					this.width = getPropertyVal(this.props.maxW, window.innerWidth)
 					this.width *= this.width / startW
 				}
 			}
