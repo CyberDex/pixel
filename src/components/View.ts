@@ -52,16 +52,32 @@ export class View extends Sprite {
 		if (this.props?.w) {
 			const startW = this.width
 			this.width = getPropertyVal(this.props.w, window.innerWidth)
+			if (this.props.maxW && this.width > this.props.maxW) {
+				this.width = getPropertyVal(this.props.maxW, window.innerWidth)
+			}
 			if (!this.props?.h) {
 				this.height *= this.width / startW
+				if (this.props.maxH && this.height > this.props.maxH) {
+					const startH = this.height
+					this.height = this.props.maxH
+					this.width *= this.height / startH
+				}
 			}
 		}
 
 		if (this.props?.h) {
 			const startH = this.height
 			this.height = getPropertyVal(this.props.h, window.innerHeight)
+			if (this.props.maxH && this.height > this.props.maxH) {
+				this.height = getPropertyVal(this.props.maxH, window.innerHeight)
+			}
 			if (!this.props.w) {
 				this.width *= this.height / startH
+				if (this.props.maxW && this.width > this.props.maxW) {
+					const startW = this.width
+					this.width = this.props.maxW
+					this.width *= this.width / startW
+				}
 			}
 		}
 	}

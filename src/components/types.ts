@@ -7,6 +7,8 @@ export interface IComponent {
   y?: number | string | TVertSide,
   w?: number | string,
   h?: number | string,
+  maxW?: number
+  maxH?: number,
 }
 
 export type TVertSide =
