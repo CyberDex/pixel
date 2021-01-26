@@ -7,16 +7,16 @@ export class Scene extends View {
 		super(props)
 	}
 
-	public async preload(assets?: string[]) {
-		await this.loadAssets(assets)
-	}
-
 	public addButton(
 		props: IButton,
 		button = new Button(props)
 	): Button {
 		this.add(button)
 		return button
+	}
+
+	public async preload(assets?: string[]) {
+		await this.loadAssets(assets)
 	}
 
 	public async loadAssets(assets?: string[]) {

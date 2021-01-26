@@ -19,10 +19,10 @@ export class View extends Sprite {
 	}
 
 	public addImg(
-		props: IView,
-		img = new View(props)
+		props: IView
 	): View {
-		this.add(new View(props))
+		const img = new View(props)
+		this.add(img)
 		return img
 	}
 
